@@ -1,0 +1,22 @@
+window.NICKNAME_SCHOLARSHIP = window.NICKNAME_SCHOLARSHIP || {};
+Object.assign(window.NICKNAME_SCHOLARSHIP, {
+  pto_vii: { note: '«Неофилопатор» означает «новый любящий отца» — династический эпитет Птолемея VII.', source: 'https://en.wikipedia.org/wiki/Ptolemy_VII_Neos_Philopator', sourceLabel: 'Wikipedia: «Ptolemy VII Neos Philopator»' },
+  pto_ix: { note: '«Спаситель» (Sōtēr) — греческий культовый эпитет Птолемея IX.', source: 'https://www.britannica.com/biography/Ptolemy-IX-Soter-II', sourceLabel: 'Encyclopaedia Britannica: «Ptolemy IX»' },
+  pto_x: { note: '«Александр I» — тронное имя Птолемея X, используемое для различения правителей династии.', source: 'https://www.britannica.com/biography/Ptolemy-X-Alexander-I', sourceLabel: 'Encyclopaedia Britannica: «Ptolemy X»' },
+  pto_xi: { note: '«Александр II» — тронное имя Птолемея XI, сына Птолемея X.', source: 'https://www.britannica.com/biography/Ptolemy-XI-Alexander-II', sourceLabel: 'Encyclopaedia Britannica: «Ptolemy XI»' },
+  sel_seleucus_iii: { note: '«Спаситель» (Sōtēr) — почётный эпитет Селевка III; также известен как Керавн, «молния».', source: 'https://www.britannica.com/biography/Seleucus-III-Soter', sourceLabel: 'Encyclopaedia Britannica: «Seleucus III»' },
+  sel_seleucus_iv: { note: '«Филопатор» означает «любящий отца» — династический эпитет Селевка IV.', source: 'https://www.britannica.com/biography/Seleucus-IV-Philopator', sourceLabel: 'Encyclopaedia Britannica: «Seleucus IV»' },
+  sel_antiochus_v: { note: '«Эвпатор» означает «от благородного отца» — почётный династический эпитет.', source: 'https://www.britannica.com/biography/Antiochus-V-Eupator', sourceLabel: 'Encyclopaedia Britannica: «Antiochus V»' },
+  sel_demeterius_i: { note: '«Спаситель» (Sōtēr) — почётный эпитет Деметрия I.', source: 'https://www.britannica.com/biography/Demetrius-I-Soter', sourceLabel: 'Encyclopaedia Britannica: «Demetrius I»' },
+  sel_alexander_balas: { note: '«Балас» — устойчивое различительное имя Александра I; происхождение слова окончательно не установлено.', source: 'https://www.britannica.com/biography/Alexander-Balas', sourceLabel: 'Encyclopaedia Britannica: «Alexander Balas»' },
+  sel_demeterius_ii: { note: '«Никатор» означает «победитель» и относится к военным успехам Деметрия II.', source: 'https://www.britannica.com/biography/Demetrius-II-Nicator', sourceLabel: 'Encyclopaedia Britannica: «Demetrius II»' },
+  sel_antiochus_vi: { note: '«Дионис» — культовый эпитет Антиоха VI, связывавший его с богом Дионисом.', source: 'https://www.britannica.com/biography/Antiochus-VI-Dionysus', sourceLabel: 'Encyclopaedia Britannica: «Antiochus VI»' },
+  sel_seleucus_v: { note: '«Филометор» означает «любящий мать» — династический эпитет Селевка V.', source: 'https://en.wikipedia.org/wiki/Seleucus_V_Philometor', sourceLabel: 'Wikipedia: «Seleucus V Philometor»' },
+  sel_seleucus_vi: { note: '«Эпифан» означает «явленный» или «прославленный» — божественный династический эпитет.', source: 'https://www.britannica.com/biography/Seleucus-VI-Epiphanes-Nicator', sourceLabel: 'Encyclopaedia Britannica: «Seleucus VI»' },
+  sel_antiochus_x: { note: '«Евсеб» означает «благочестивый» — почётный эпитет Антиоха X.', source: 'https://www.britannica.com/biography/Antiochus-X-Eusebes', sourceLabel: 'Encyclopaedia Britannica: «Antiochus X»' },
+  sel_demeterius_iii: { note: '«Эвкер» обычно связывают с греческим «благовременный»; точное происхождение эпитета спорно.', source: 'https://en.wikipedia.org/wiki/Demetrius_III_Eucaerus', sourceLabel: 'Wikipedia: «Demetrius III Eucaerus»' },
+  sel_antiochus_xi: { note: '«Эпифан» означает «явленный» или «прославленный» — династический эпитет Антиоха XI.', source: 'https://en.wikipedia.org/wiki/Antiochus_XI_Epiphanes', sourceLabel: 'Wikipedia: «Antiochus XI Epiphanes»' },
+  sel_philip_i: { note: '«Филадельф» означает «любящий брата» — династический эпитет Филиппа I.', source: 'https://www.britannica.com/biography/Philip-I-Philadelphus', sourceLabel: 'Encyclopaedia Britannica: «Philip I»' },
+  sel_antiochus_xii: { note: '«Дионис» — культовый эпитет Антиоха XII, связывавший его с богом Дионисом.', source: 'https://www.britannica.com/biography/Antiochus-XII-Dionysus', sourceLabel: 'Encyclopaedia Britannica: «Antiochus XII»' },
+  sel_philip_ii: { note: '«Филоромей» означает «друг римлян» и отражает политическую ориентацию Филиппа II.', source: 'https://en.wikipedia.org/wiki/Philip_II_Philoromaeus', sourceLabel: 'Wikipedia: «Philip II Philoromaeus»' }
+});

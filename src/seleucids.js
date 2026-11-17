@@ -1,0 +1,44 @@
+// Селевкиды: правители эллинистической державы 305–64 годов до н. э.
+(() => {
+  'use strict';
+  function member(data) {
+    const image = window.DYNASTY_IMAGE_SOURCES?.[data.id] || {};
+    return { ...data, initials: `${data.name.split(' ').map((part) => part[0]).join('.')}.`,
+      photo: `./assets/seleucids/${data.id}.webp?v=1`, photoKind: image.kind || 'Изображение на монете или другой исторический источник',
+      photoArtist: image.artist || 'См. источник изображения', photoLicense: image.license || 'См. источник', photoSource: image.source,
+      nickname: data.nickname || null, father: data.father || null, mother: null, spouse: null, children: data.children || [] };
+  }
+  Object.assign(window.DYNASTIES, {
+    seleucids: {
+      id: 'seleucids', name: 'Селевкиды', heading: 'Династия Селевкидов', period: '305–64 до н. э.', country: 'Сирия · Передняя Азия',
+      intro: 'Двадцать пять правителей — от Селевка I до Филиппа II. Поздние параллельные правления и узурпаторы указаны отдельно.',
+      members: [
+        { id: 'sel_seleucus_i', name: 'Селевк I', born: 'ок. 358 до н. э.', died: '281 до н. э.', title: 'Царь Селевкидов', reign: 'Правление: 305–281 до н. э.', generation: 0, nickname: 'Никатор', bio: 'Полководец Александра Великого и основатель державы.', children: ['sel_antiochus_i'] },
+        { id: 'sel_antiochus_i', name: 'Антиох I', born: 'ок. 324 до н. э.', died: '261 до н. э.', title: 'Царь Селевкидов', reign: 'Правление: 281–261 до н. э.', generation: 1, nickname: 'Спаситель', bio: 'Сын Селевка I. Защищал державу от галатов.', father: 'sel_seleucus_i', children: ['sel_antiochus_ii'] },
+        { id: 'sel_antiochus_ii', name: 'Антиох II', born: 'ок. 286 до н. э.', died: '246 до н. э.', title: 'Царь Селевкидов', reign: 'Правление: 261–246 до н. э.', generation: 2, nickname: 'Бог', bio: 'Сын Антиоха I. Его правление связано с войнами против Птолемеев.', father: 'sel_antiochus_i', children: ['sel_seleucus_ii'] },
+        { id: 'sel_seleucus_ii', name: 'Селевк II', born: 'ок. 265 до н. э.', died: '225 до н. э.', title: 'Царь Селевкидов', reign: 'Правление: 246–225 до н. э.', generation: 3, nickname: 'Каллиник', bio: 'Сын Антиоха II. Боролся за восстановление державы.', father: 'sel_antiochus_ii', children: ['sel_seleucus_iii', 'sel_antiochus_iii'] },
+        { id: 'sel_seleucus_iii', name: 'Селевк III', born: 'ок. 243 до н. э.', died: '223 до н. э.', title: 'Царь Селевкидов', reign: 'Правление: 225–223 до н. э.', generation: 4, nickname: 'Спаситель', bio: 'Старший сын Селевка II. Правил недолго.', father: 'sel_seleucus_ii' },
+        { id: 'sel_antiochus_iii', name: 'Антиох III', born: 'ок. 241 до н. э.', died: '187 до н. э.', title: 'Царь Селевкидов', reign: 'Правление: 223–187 до н. э.', generation: 4, nickname: 'Великий', bio: 'Сын Селевка II. Восстановил державу, но был разбит Римом.', father: 'sel_seleucus_ii', children: ['sel_seleucus_iv', 'sel_antiochus_iv', 'sel_demeterius_i'] },
+        { id: 'sel_seleucus_iv', name: 'Селевк IV', born: 'ок. 218 до н. э.', died: '175 до н. э.', title: 'Царь Селевкидов', reign: 'Правление: 187–175 до н. э.', generation: 5, nickname: 'Филопатор', bio: 'Сын Антиоха III. Правил после римской победы.', father: 'sel_antiochus_iii' },
+        { id: 'sel_antiochus_iv', name: 'Антиох IV', born: 'ок. 215 до н. э.', died: '164 до н. э.', title: 'Царь Селевкидов', reign: 'Правление: 175–164 до н. э.', generation: 5, nickname: 'Эпифан', bio: 'Сын Антиоха III. Его политика вызвала Маккавейское восстание.', father: 'sel_antiochus_iii', children: ['sel_antiochus_v'] },
+        { id: 'sel_antiochus_v', name: 'Антиох V', born: 'ок. 173 до н. э.', died: '162 до н. э.', title: 'Царь Селевкидов', reign: 'Правление: 164–162 до н. э.', generation: 6, nickname: 'Эвпатор', bio: 'Сын Антиоха IV. Наследовал ребёнком.', father: 'sel_antiochus_iv' },
+        { id: 'sel_demeterius_i', name: 'Деметрий I', born: 'ок. 185 до н. э.', died: '150 до н. э.', title: 'Царь Селевкидов', reign: 'Правление: 162–150 до н. э.', generation: 5, nickname: 'Спаситель', bio: 'Сын Селевка IV. Вернулся из римского заложничества.', father: 'sel_antiochus_iii', children: ['sel_demeterius_ii', 'sel_antiochus_vii'] },
+        { id: 'sel_alexander_balas', name: 'Александр I Балас', born: 'ок. 165 до н. э.', died: '145 до н. э.', title: 'Узурпатор престола Селевкидов', reign: 'Правление: 150–145 до н. э.', generation: 6, nickname: 'Балас', bio: 'Захватил престол, выдавая себя за сына Антиоха IV.', children: ['sel_antiochus_vi'] },
+        { id: 'sel_demeterius_ii', name: 'Деметрий II', born: 'ок. 160 до н. э.', died: '125 до н. э.', title: 'Царь Селевкидов', reign: 'Правление: 145–138 · 129–125 до н. э.', generation: 6, nickname: 'Никатор', bio: 'Сын Деметрия I. Дважды правил в условиях гражданских войн.', father: 'sel_demeterius_i', children: ['sel_seleucus_v', 'sel_antiochus_viii', 'sel_demeterius_iii'] },
+        { id: 'sel_antiochus_vi', name: 'Антиох VI', born: 'ок. 148 до н. э.', died: 'ок. 142 до н. э.', title: 'Соперник за престол Селевкидов', reign: 'Правление: 145–142 до н. э.', generation: 7, nickname: 'Дионис', bio: 'Сын Александра Баласа. Был орудием Диодота Трифона.', father: 'sel_alexander_balas' },
+        { id: 'sel_antiochus_vii', name: 'Антиох VII', born: 'ок. 159 до н. э.', died: '129 до н. э.', title: 'Царь Селевкидов', reign: 'Правление: 138–129 до н. э.', generation: 6, nickname: 'Сидет', bio: 'Сын Деметрия I. Погиб в войне с парфянами.', father: 'sel_demeterius_i', children: ['sel_antiochus_ix'] },
+        { id: 'sel_seleucus_v', name: 'Селевк V', born: 'ок. 145 до н. э.', died: '125 до н. э.', title: 'Царь Селевкидов', reign: 'Правление: 125 до н. э.', generation: 7, nickname: 'Филометор', bio: 'Сын Деметрия II. Был убит матерью Клеопатрой Теей.', father: 'sel_demeterius_ii' },
+        { id: 'sel_antiochus_viii', name: 'Антиох VIII', born: 'ок. 141 до н. э.', died: '96 до н. э.', title: 'Царь Селевкидов', reign: 'Правление: 125–96 до н. э. · с перерывом', generation: 7, nickname: 'Грип', bio: 'Сын Деметрия II. Боролся с Клеопатрой Теей и Антиохом IX.', father: 'sel_demeterius_ii', children: ['sel_seleucus_vi', 'sel_demeterius_iii', 'sel_antiochus_xi', 'sel_philip_i', 'sel_antiochus_xii'] },
+        { id: 'sel_antiochus_ix', name: 'Антиох IX', born: 'ок. 135 до н. э.', died: '95 до н. э.', title: 'Царь Селевкидов', reign: 'Правление: 114–95 до н. э.', generation: 7, nickname: 'Кизикский', bio: 'Сын Антиоха VII. Боролся с Антиохом VIII.', father: 'sel_antiochus_vii', children: ['sel_antiochus_x'] },
+        { id: 'sel_seleucus_vi', name: 'Селевк VI', born: 'ок. 120 до н. э.', died: '94 до н. э.', title: 'Царь Селевкидов', reign: 'Правление: 96–94 до н. э.', generation: 8, nickname: 'Эпифан', bio: 'Сын Антиоха VIII. Мстил за отца.', father: 'sel_antiochus_viii' },
+        { id: 'sel_antiochus_x', name: 'Антиох X', born: 'ок. 115 до н. э.', died: 'ок. 92 до н. э.', title: 'Царь Селевкидов', reign: 'Правление: 95–92 до н. э.', generation: 8, nickname: 'Евсеб', bio: 'Сын Антиоха IX. Победил Селевка VI.', father: 'sel_antiochus_ix', children: ['sel_antiochus_xiii'] },
+        { id: 'sel_demeterius_iii', name: 'Деметрий III', born: 'ок. 120 до н. э.', died: '87 до н. э.', title: 'Царь Селевкидов', reign: 'Правление: 96–87 до н. э.', generation: 8, nickname: 'Эвкер', bio: 'Сын Антиоха VIII. Правил Дамаском.', father: 'sel_antiochus_viii' },
+        { id: 'sel_antiochus_xi', name: 'Антиох XI', born: 'ок. 115 до н. э.', died: '93 до н. э.', title: 'Царь Селевкидов', reign: 'Правление: 94–93 до н. э.', generation: 8, nickname: 'Эпифан', bio: 'Сын Антиоха VIII. Погиб в борьбе за престол.', father: 'sel_antiochus_viii' },
+        { id: 'sel_philip_i', name: 'Филипп I', born: 'ок. 110 до н. э.', died: 'ок. 83 до н. э.', title: 'Царь Селевкидов', reign: 'Правление: 95–83 до н. э.', generation: 8, nickname: 'Филадельф', bio: 'Сын Антиоха VIII. Удерживал часть Сирии.', father: 'sel_antiochus_viii', children: ['sel_philip_ii'] },
+        { id: 'sel_antiochus_xii', name: 'Антиох XII', born: 'ок. 110 до н. э.', died: '84 до н. э.', title: 'Царь Селевкидов', reign: 'Правление: 87–84 до н. э.', generation: 8, nickname: 'Дионис', bio: 'Сын Антиоха VIII. Погиб в бою с набатеями.', father: 'sel_antiochus_viii' },
+        { id: 'sel_antiochus_xiii', name: 'Антиох XIII', born: 'ок. 94 до н. э.', died: '64 до н. э.', title: 'Последний царь Селевкидов', reign: 'Правление: 69–64 до н. э. · с перерывом', generation: 9, nickname: 'Азиатик', bio: 'Сын Антиоха X. Был низложен Помпеем.', father: 'sel_antiochus_x' },
+        { id: 'sel_philip_ii', name: 'Филипп II', born: 'ок. 90 до н. э.', died: '64 до н. э.', title: 'Соперник за престол Селевкидов', reign: 'Правление: 67–64 до н. э.', generation: 9, nickname: 'Филоромей', bio: 'Сын Филиппа I. Конкурировал с Антиохом XIII.', father: 'sel_philip_i' }
+      ].map(member)
+    }
+  });
+})();

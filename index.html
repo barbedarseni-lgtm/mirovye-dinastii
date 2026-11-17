@@ -1,0 +1,779 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f7f6f4">
+  <meta name="description" content="Интерактивные древа мировых династий: исторические изображения, биографии и устоявшиеся прозвища со ссылками на источники.">
+  <meta name="build-id" content="dynasties-2026-11-17-v63">
+  <title>Мировые династии правления</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./src/styles.css?v=56">
+  <script>
+    try {
+      if (localStorage.getItem('dynasties-theme') === 'dark') {
+        document.documentElement.dataset.theme = 'dark';
+      }
+    } catch (_) { /* Тема по умолчанию остаётся светлой. */ }
+  </script>
+  <script src="./src/data.js?v=56" defer></script>
+  <script src="./src/european-dynasties.js?v=56" defer></script>
+  <script src="./src/piasts.js?v=56" defer></script>
+  <script src="./src/hohenstaufens.js?v=56" defer></script>
+  <script src="./src/image-sources.js?v=56" defer></script>
+  <script src="./src/additional-dynasties.js?v=56" defer></script>
+  <script src="./src/tudors.js?v=56" defer></script>
+  <script src="./src/stuarts.js?v=56" defer></script>
+  <script src="./src/windsors.js?v=56" defer></script>
+  <script src="./src/hanovers.js?v=56" defer></script>
+  <script src="./src/bourbons.js?v=56" defer></script>
+  <script src="./src/bonapartes.js?v=56" defer></script>
+  <script src="./src/hohenzollerns.js?v=56" defer></script>
+  <script src="./src/orange-nassau.js?v=56" defer></script>
+  <script src="./src/bernadottes.js?v=56" defer></script>
+  <script src="./src/oldenburg.js?v=56" defer></script>
+  <script src="./src/glucksburgs.js?v=56" defer></script>
+  <script src="./src/savoy.js?v=56" defer></script>
+  <script src="./src/vasa.js?v=56" defer></script>
+  <script src="./src/jagiellons.js?v=56" defer></script>
+  <script src="./src/premyslids.js?v=56" defer></script>
+  <script src="./src/arpads.js?v=56" defer></script>
+  <script src="./src/bagrationi.js?v=56" defer></script>
+  <script src="./src/nemanjic.js?v=56" defer></script>
+  <script src="./src/luxembourgs.js?v=56" defer></script>
+  <script src="./src/isaurians.js?v=56" defer></script>
+  <script src="./src/justinians.js?v=56" defer></script>
+  <script src="./src/macedonians.js?v=56" defer></script>
+  <script src="./src/komnenos.js?v=56" defer></script>
+  <script src="./src/angeloi.js?v=56" defer></script>
+  <script src="./src/laskarids.js?v=56" defer></script>
+  <script src="./src/ptolemies.js?v=56" defer></script>
+  <script src="./src/seleucids.js?v=56" defer></script>
+  <script src="./src/argeads.js?v=56" defer></script>
+  <script src="./src/antigonids.js?v=56" defer></script>
+  <script src="./src/achaemenids.js?v=56" defer></script>
+  <script src="./src/sassanids.js?v=56" defer></script>
+  <script src="./src/arsacids.js?v=56" defer></script>
+  <script src="./src/safavids.js?v=56" defer></script>
+  <script src="./src/qajars.js?v=56" defer></script>
+  <script src="./src/afsharids.js?v=56" defer></script>
+  <script src="./src/zands.js?v=56" defer></script>
+  <script src="./src/tang.js?v=56" defer></script>
+  <script src="./src/ming.js?v=56" defer></script>
+  <script src="./src/qing.js?v=56" defer></script>
+  <script src="./src/han.js?v=56" defer></script>
+  <script src="./src/song.js?v=56" defer></script>
+  <script src="./src/yuan.js?v=56" defer></script>
+  <script src="./src/yamato.js?v=56" defer></script>
+  <script src="./src/joseon.js?v=57" defer></script>
+  <script src="./src/umayyads.js?v=58" defer></script>
+  <script src="./src/abbasids.js?v=59" defer></script>
+  <script src="./src/fatimids.js?v=60" defer></script>
+  <script src="./src/ottomans.js?v=61" defer></script>
+  <script src="./src/mughals.js?v=62" defer></script>
+  <script src="./src/timurids.js?v=63" defer></script>
+  <script src="./src/nickname-sources.js?v=56" defer></script>
+  <script src="./src/european-nicknames.js?v=56" defer></script>
+  <script src="./src/piast-nicknames.js?v=56" defer></script>
+  <script src="./src/hohenstaufen-nicknames.js?v=56" defer></script>
+  <script src="./src/additional-nicknames.js?v=56" defer></script>
+  <script src="./src/tudor-nicknames.js?v=56" defer></script>
+  <script src="./src/stuart-nicknames.js?v=56" defer></script>
+  <script src="./src/hanover-nicknames.js?v=56" defer></script>
+  <script src="./src/bourbon-nicknames.js?v=56" defer></script>
+  <script src="./src/bonaparte-nicknames.js?v=56" defer></script>
+  <script src="./src/hohenzollern-nicknames.js?v=56" defer></script>
+  <script src="./src/oldenburg-nicknames.js?v=56" defer></script>
+  <script src="./src/glucksburg-nicknames.js?v=56" defer></script>
+  <script src="./src/savoy-nicknames.js?v=56" defer></script>
+  <script src="./src/vasa-nicknames.js?v=56" defer></script>
+  <script src="./src/jagiellon-nicknames.js?v=56" defer></script>
+  <script src="./src/premyslid-nicknames.js?v=56" defer></script>
+  <script src="./src/arpad-nicknames.js?v=56" defer></script>
+  <script src="./src/bagrationi-nicknames.js?v=56" defer></script>
+  <script src="./src/nemanjic-nicknames.js?v=56" defer></script>
+  <script src="./src/luxembourg-nicknames.js?v=56" defer></script>
+  <script src="./src/isaurian-nicknames.js?v=56" defer></script>
+  <script src="./src/justinian-nicknames.js?v=56" defer></script>
+  <script src="./src/macedonian-nicknames.js?v=56" defer></script>
+  <script src="./src/komnenos-nicknames.js?v=56" defer></script>
+  <script src="./src/ptolemy-nicknames.js?v=56" defer></script>
+  <script src="./src/seleucid-nicknames.js?v=56" defer></script>
+  <script src="./src/argead-nicknames.js?v=56" defer></script>
+  <script src="./src/antigonid-nicknames.js?v=56" defer></script>
+  <script src="./src/achaemenid-nicknames.js?v=56" defer></script>
+  <script src="./src/sassanid-nicknames.js?v=56" defer></script>
+  <script src="./src/arsacid-nicknames.js?v=56" defer></script>
+  <script src="./src/safavid-nicknames.js?v=56" defer></script>
+  <script src="./src/joseon-nicknames.js?v=57" defer></script>
+  <script src="./src/umayyad-nicknames.js?v=58" defer></script>
+  <script src="./src/abbasid-nicknames.js?v=59" defer></script>
+  <script src="./src/ottoman-nicknames.js?v=61" defer></script>
+  <script src="./src/mughal-nicknames.js?v=62" defer></script>
+  <script src="./src/timurid-nicknames.js?v=63" defer></script>
+  <script src="./src/remaining-nicknames.js?v=63" defer></script>
+  <script src="./src/app.js?v=56" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <button class="brand" id="homeButton" type="button" aria-label="Перейти к списку династий">
+        <span class="brand__mark" aria-hidden="true">МД</span>
+        <span class="brand__text">Мировые династии</span>
+      </button>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false">
+        <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 15.2A8.5 8.5 0 0 1 8.8 4a8.5 8.5 0 1 0 11.2 11.2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        <span id="themeLabel">Тёмная тема</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <section id="dynastyScreen" aria-labelledby="pageTitle">
+      <div class="hero">
+        <div class="hero__copy">
+          <p class="kicker">Интерактивная родословная</p>
+          <h1 id="pageTitle">Мировые династии правления</h1>
+          <p class="hero__lead">Проследите смену поколений и познакомьтесь с людьми, чьи решения меняли историю. Сорок три династических древа — с историческими изображениями, биографиями и источниками прозвищ.</p>
+        </div>
+        <dl class="hero__stats" aria-label="Краткая статистика">
+          <div><dt>Династии</dt><dd>60</dd></div>
+          <div><dt>Фигур в древах</dt><dd>789</dd></div>
+          <div><dt>Охват</dt><dd>X–XX вв.</dd></div>
+        </dl>
+      </div>
+
+      <div class="section-heading">
+        <div>
+          <p class="section-heading__label">Коллекция</p>
+          <h2>Выберите династию</h2>
+        </div>
+        <p>Нажмите на доступную карточку, чтобы открыть семейное древо.</p>
+      </div>
+
+      <div class="dynasty-grid">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="romanovs" aria-label="Открыть родословное древо Романовых">
+          <span class="dynasty-card__watermark" aria-hidden="true">Р</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Романовы</span>
+          <span class="dynasty-card__meta">1613–1917 · Россия</span>
+          <span class="dynasty-card__description">Десять поколений правителей, регентов и наследников — от восстановления после Смуты до конца империи.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="rurikovichs" aria-label="Открыть родословное древо Рюриковичей">
+          <span class="dynasty-card__watermark" aria-hidden="true">Рю</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Рюриковичи</span>
+          <span class="dynasty-card__meta">X–XVI века · Русь → Россия</span>
+          <span class="dynasty-card__description">Восемнадцать поколений одной ветви — от Владимира I в Киеве до Фёдора I в Москве.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="capetians" aria-label="Открыть родословное древо Капетингов">
+          <span class="dynasty-card__watermark" aria-hidden="true">К</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Капетинги</span>
+          <span class="dynasty-card__meta">987–1328 · Франция</span>
+          <span class="dynasty-card__description">Пятнадцать королей прямой линии — от Гуго Капета до Карла IV, после которого престол перешёл к Валуа.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="plantagenets" aria-label="Открыть родословное древо Плантагенетов">
+          <span class="dynasty-card__watermark" aria-hidden="true">П</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Плантагенеты</span>
+          <span class="dynasty-card__meta">1154–1399 · Англия</span>
+          <span class="dynasty-card__description">Восемь королей и Чёрный принц — от Генриха II до Ричарда II, без отдельных ветвей Ланкастеров и Йорков.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="piasts" aria-label="Открыть родословное древо Пястов">
+          <span class="dynasty-card__watermark" aria-hidden="true">Пя</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Пясты</span>
+          <span class="dynasty-card__meta">ок. 960–1370 · Польша</span>
+          <span class="dynasty-card__description">Двадцать пять представителей основной линии и связанных удельных ветвей — от Мешко I до Казимира III Великого.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="hohenstaufens" aria-label="Открыть родословное древо Штауфенов">
+          <span class="dynasty-card__watermark" aria-hidden="true">Ш</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Штауфены</span>
+          <span class="dynasty-card__meta">1138–1285 · Империя и Сицилия</span>
+          <span class="dynasty-card__description">Десять правителей имперской и сицилийской линий — от Конрада III и Фридриха Барбароссы до Констанции II.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="carolingians" aria-label="Открыть родословное древо Каролингов">
+          <span class="dynasty-card__watermark" aria-hidden="true">К</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Каролинги</span>
+          <span class="dynasty-card__meta">751–987 · Франкское государство</span>
+          <span class="dynasty-card__description">Пятнадцать правителей — от Пипина Короткого и Карла Великого до последнего западнофранкского короля Людовика V.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="palaiologoi" aria-label="Открыть родословное древо Палеологов">
+          <span class="dynasty-card__watermark" aria-hidden="true">Па</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Палеологи</span>
+          <span class="dynasty-card__meta">1259–1453 · Византия</span>
+          <span class="dynasty-card__description">Последняя династия Византии — от восстановления империи Михаилом VIII до гибели Константина XI.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="wessex" aria-label="Открыть родословное древо Уэссекского дома">
+          <span class="dynasty-card__watermark" aria-hidden="true">У</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Уэссекская</span>
+          <span class="dynasty-card__meta">802–1066 · Уэссекс и Англия</span>
+          <span class="dynasty-card__description">Семнадцать правителей — от Эгберта и Альфреда Великого до Эдуарда Исповедника.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="knytlinga" aria-label="Открыть родословное древо Кнютлингов">
+          <span class="dynasty-card__watermark" aria-hidden="true">Кн</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Кнютлинги</span>
+          <span class="dynasty-card__meta">1013–1042 · Англия и Дания</span>
+          <span class="dynasty-card__description">Четыре монарха североморской державы — Свен Вилобородый, Кнут Великий и два его сына.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="tudors" aria-label="Открыть родословное древо Тюдоров">
+          <span class="dynasty-card__watermark" aria-hidden="true">Т</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Тюдоры</span>
+          <span class="dynasty-card__meta">1485–1603 · Англия</span>
+          <span class="dynasty-card__description">Шесть монархов — от Генриха VII до Елизаветы I, включая девятидневное правление Джейн Грей.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="stuarts" aria-label="Открыть родословное древо Стюартов">
+          <span class="dynasty-card__watermark" aria-hidden="true">С</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Стюарты</span>
+          <span class="dynasty-card__meta">1603–1714 · Англия и Шотландия</span>
+          <span class="dynasty-card__description">Шесть монархов — от Якова I до Анны, через казнь Карла I, Реставрацию и Славную революцию.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="windsors" aria-label="Открыть родословное древо Виндзоров">
+          <span class="dynasty-card__watermark" aria-hidden="true">В</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Виндзоры</span>
+          <span class="dynasty-card__meta">1917 — настоящее время · Великобритания</span>
+          <span class="dynasty-card__description">Пять монархов — от Георга V до Карла III, от переименования дома в 1917 году до наших дней.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="hanovers" aria-label="Открыть родословное древо Ганноверской династии">
+          <span class="dynasty-card__watermark" aria-hidden="true">Г</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Ганноверская</span>
+          <span class="dynasty-card__meta">1714–1901 · Великобритания</span>
+          <span class="dynasty-card__description">Шесть монархов и два принца — от Георга I до королевы Виктории.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="bourbons" aria-label="Открыть родословное древо Бурбонов">
+          <span class="dynasty-card__watermark" aria-hidden="true">Б</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Бурбоны</span>
+          <span class="dynasty-card__meta">1589–1830 · Франция</span>
+          <span class="dynasty-card__description">Четырнадцать представителей старшей французской линии — от Генриха IV до Генриха V.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="bonapartes" aria-label="Открыть родословное древо Бонапартов">
+          <span class="dynasty-card__watermark" aria-hidden="true">Бо</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Бонапарты</span>
+          <span class="dynasty-card__meta">1804–1870 · Франция</span>
+          <span class="dynasty-card__description">Пять представителей дома — от Карло Бонапарте до Наполеона III.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="hohenzollerns" aria-label="Открыть родословное древо Гогенцоллернов">
+          <span class="dynasty-card__watermark" aria-hidden="true">Го</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Гогенцоллерны</span>
+          <span class="dynasty-card__meta">1701–1918 · Пруссия и Германия</span>
+          <span class="dynasty-card__description">Девять правителей и принц Август Вильгельм — от первого прусского короля до Вильгельма II.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="orangeNassau" aria-label="Открыть родословное древо Оранско-Нассауской династии">
+          <span class="dynasty-card__watermark" aria-hidden="true">О</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Оранско-Нассауская</span>
+          <span class="dynasty-card__meta">1815 — настоящее время · Нидерланды</span>
+          <span class="dynasty-card__description">Семь монархов — от Виллема I до Виллема-Александра.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="bernadottes" aria-label="Открыть родословное древо Бернадотов">
+          <span class="dynasty-card__watermark" aria-hidden="true">Бе</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Бернадоты</span>
+          <span class="dynasty-card__meta">1818 — настоящее время · Швеция</span>
+          <span class="dynasty-card__description">Семь королей и принц Густав Адольф — от Карла XIV Юхана до Карла XVI Густава.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="oldenburg" aria-label="Открыть родословное древо Ольденбургской династии">
+          <span class="dynasty-card__watermark" aria-hidden="true">Ол</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Ольденбургская</span>
+          <span class="dynasty-card__meta">1448–1863 · Дания</span>
+          <span class="dynasty-card__description">Шестнадцать королей и наследственный принц — от Кристиана I до Фредерика VII.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="glucksburgs" aria-label="Открыть родословное древо Глюксбургов">
+          <span class="dynasty-card__watermark" aria-hidden="true">Гл</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Глюксбурги</span>
+          <span class="dynasty-card__meta">1863 — настоящее время · Дания</span>
+          <span class="dynasty-card__description">Шесть монархов — от Кристиана IX до Фредерика X.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="savoy" aria-label="Открыть родословное древо Савойской династии">
+          <span class="dynasty-card__watermark" aria-hidden="true">Са</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Савойская</span>
+          <span class="dynasty-card__meta">1861–1946 · Италия</span>
+          <span class="dynasty-card__description">Четыре короля объединённой Италии — от Виктора Эммануила II до Умберто II.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="vasa" aria-label="Открыть родословное древо Ваза">
+          <span class="dynasty-card__watermark" aria-hidden="true">Ва</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Ваза</span>
+          <span class="dynasty-card__meta">1523–1654 · Швеция</span>
+          <span class="dynasty-card__description">Семь монархов — от Густава I до королевы Кристины.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="jagiellons" aria-label="Открыть родословное древо Ягеллонов">
+          <span class="dynasty-card__watermark" aria-hidden="true">Я</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Ягеллоны</span>
+          <span class="dynasty-card__meta">1386–1572 · Польша и Литва</span>
+          <span class="dynasty-card__description">Семь королей — от Владислава II Ягайло до Сигизмунда II Августа.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="premyslids" aria-label="Открыть родословное древо Пржемысловичей">
+          <span class="dynasty-card__watermark" aria-hidden="true">Пр</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Пржемысловичи</span>
+          <span class="dynasty-card__meta">1158–1306 · Чехия</span>
+          <span class="dynasty-card__description">Шесть чешских королей — от Владислава II до Вацлава III.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="arpads" aria-label="Открыть родословное древо Арпадов">
+          <span class="dynasty-card__watermark" aria-hidden="true">А</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Арпады</span>
+          <span class="dynasty-card__meta">1000–1301 · Венгрия</span>
+          <span class="dynasty-card__description">Двадцать два короля — от святого Иштвана I до Андраша III.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="bagrationi" aria-label="Открыть родословное древо Багратиони">
+          <span class="dynasty-card__watermark" aria-hidden="true">Ба</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Багратиони</span>
+          <span class="dynasty-card__meta">1008–1490 · Грузия</span>
+          <span class="dynasty-card__description">Двадцать три правителя единого царства — от Баграта III до Константина II.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="nemanjic" aria-label="Открыть родословное древо Неманичей">
+          <span class="dynasty-card__watermark" aria-hidden="true">Н</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Неманичи</span>
+          <span class="dynasty-card__meta">1166–1371 · Сербия</span>
+          <span class="dynasty-card__description">Одиннадцать правителей — от Стефана Немании до Уроша V.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="luxembourgs" aria-label="Открыть родословное древо Люксембургов">
+          <span class="dynasty-card__watermark" aria-hidden="true">Л</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Люксембурги</span>
+          <span class="dynasty-card__meta">1308–1437 · Чехия и империя</span>
+          <span class="dynasty-card__description">Пять правителей — от Генриха VII до Сигизмунда.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="isaurians" aria-label="Открыть родословное древо Исаврийской династии">
+          <span class="dynasty-card__watermark" aria-hidden="true">И</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Исаврийская</span>
+          <span class="dynasty-card__meta">717–802 · Византия</span>
+          <span class="dynasty-card__description">Пять императоров — от Льва III до Ирины.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="justinians" aria-label="Открыть родословное древо Юстиниановой династии">
+          <span class="dynasty-card__watermark" aria-hidden="true">Ю</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Юстинианова</span>
+          <span class="dynasty-card__meta">518–602 · Византия</span>
+          <span class="dynasty-card__description">Пять императоров — от Юстина I до Маврикия.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="macedonians" aria-label="Открыть родословное древо Македонской династии">
+          <span class="dynasty-card__watermark" aria-hidden="true">Ма</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Македонская</span>
+          <span class="dynasty-card__meta">867–1056 · Византия</span>
+          <span class="dynasty-card__description">Девять императоров — от Василия I до Феодоры.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="komnenos" aria-label="Открыть родословное древо Комнинов">
+          <span class="dynasty-card__watermark" aria-hidden="true">Ко</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Комнины</span>
+          <span class="dynasty-card__meta">1057–1185 · Византия</span>
+          <span class="dynasty-card__description">Шесть императоров — от Исаака I до Андроника I.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="angeloi" aria-label="Открыть родословное древо Ангелов">
+          <span class="dynasty-card__watermark" aria-hidden="true">Ан</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Ангелы</span>
+          <span class="dynasty-card__meta">1185–1204 · Византия</span>
+          <span class="dynasty-card__description">Три императора — от Исаака II до Алексея IV.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="laskarids" aria-label="Открыть родословное древо Ласкаридов">
+          <span class="dynasty-card__watermark" aria-hidden="true">Ла</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Ласкариды</span>
+          <span class="dynasty-card__meta">1205–1261 · Никейская империя</span>
+          <span class="dynasty-card__description">Четыре императора — от Феодора I до Иоанна IV.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="ptolemies" aria-label="Открыть родословное древо Птолемеев">
+          <span class="dynasty-card__watermark" aria-hidden="true">Пт</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Птолемеи</span>
+          <span class="dynasty-card__meta">305–30 до н. э. · Египет</span>
+          <span class="dynasty-card__description">Семнадцать правителей — от Птолемея I до Цезариона.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="seleucids" aria-label="Открыть родословное древо Селевкидов">
+          <span class="dynasty-card__watermark" aria-hidden="true">Се</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Селевкиды</span>
+          <span class="dynasty-card__meta">305–64 до н. э. · Сирия и Передняя Азия</span>
+          <span class="dynasty-card__description">Двадцать пять правителей — от Селевка I до Филиппа II.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="argeads" aria-label="Открыть родословное древо Аргеадов">
+          <span class="dynasty-card__watermark" aria-hidden="true">Ар</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Аргеады</span>
+          <span class="dynasty-card__meta">413–309 до н. э. · Македония</span>
+          <span class="dynasty-card__description">Восемь царей поздней линии — от Архелая до Александра IV.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="antigonids" aria-label="Открыть родословное древо Антигонидов">
+          <span class="dynasty-card__watermark" aria-hidden="true">Ант</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Антигониды</span>
+          <span class="dynasty-card__meta">306–168 до н. э. · Македония</span>
+          <span class="dynasty-card__description">Семь правителей — от Антигона I до Персея.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="achaemenids" aria-label="Открыть родословное древо Ахеменидов">
+          <span class="dynasty-card__watermark" aria-hidden="true">Ах</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Ахемениды</span>
+          <span class="dynasty-card__meta">559–330 до н. э. · Персия</span>
+          <span class="dynasty-card__description">Тринадцать царей — от Кира Великого до Дария III.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="sassanids" aria-label="Открыть родословное древо Сасанидов">
+          <span class="dynasty-card__watermark" aria-hidden="true">Сас</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Сасаниды</span>
+          <span class="dynasty-card__meta">224–651 · Персия</span>
+          <span class="dynasty-card__description">Двадцать шесть шахов — от Ардашира I до Йездигерда III.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="arsacids" aria-label="Открыть родословное древо Арсакидов">
+          <span class="dynasty-card__watermark" aria-hidden="true">Арс</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Арсакиды</span>
+          <span class="dynasty-card__meta">ок. 247 до н. э.–227 · Парфия</span>
+          <span class="dynasty-card__description">Тридцать два царя и соперника — от Аршака I до Артабана IV.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="safavids" aria-label="Открыть родословное древо Сефевидов">
+          <span class="dynasty-card__watermark" aria-hidden="true">Сеф</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Сефевиды</span>
+          <span class="dynasty-card__meta">1501–1773 · Иран</span>
+          <span class="dynasty-card__description">Тринадцать шахов — от Исмаила I до Исмаила III.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="qajars" aria-label="Открыть родословное древо Каджаров">
+          <span class="dynasty-card__watermark" aria-hidden="true">Ка</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Каджары</span>
+          <span class="dynasty-card__meta">1789–1925 · Иран</span>
+          <span class="dynasty-card__description">Семь шахов — от Ага Мохаммад-хана до Ахмад-шаха.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="afsharids" aria-label="Открыть родословное древо Афшаридов">
+          <span class="dynasty-card__watermark" aria-hidden="true">Аф</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Афшариды</span>
+          <span class="dynasty-card__meta">1736–1796 · Иран</span>
+          <span class="dynasty-card__description">Четыре шаха — от Надир-шаха до Шахроха.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="zands" aria-label="Открыть родословное древо Зандов">
+          <span class="dynasty-card__watermark" aria-hidden="true">З</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Занды</span>
+          <span class="dynasty-card__meta">1751–1794 · Иран</span>
+          <span class="dynasty-card__description">Девять правителей — от Карим-хана до Лотф Али-хана.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="tang" aria-label="Открыть родословное древо династии Тан">
+          <span class="dynasty-card__watermark" aria-hidden="true">Т</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Тан</span>
+          <span class="dynasty-card__meta">618–907 · Китай</span>
+          <span class="dynasty-card__description">Двадцать два императора — от Гаоцзу до Ай-ди, включая У Цзэтянь.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="ming" aria-label="Открыть родословное древо династии Мин">
+          <span class="dynasty-card__watermark" aria-hidden="true">М</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Мин</span>
+          <span class="dynasty-card__meta">1368–1644 · Китай</span>
+          <span class="dynasty-card__description">Шестнадцать императоров — от Хунъу до Чунчжэнь.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="qing" aria-label="Открыть родословное древо династии Цин">
+          <span class="dynasty-card__watermark" aria-hidden="true">Ц</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Цин</span>
+          <span class="dynasty-card__meta">1644–1912 · Китай</span>
+          <span class="dynasty-card__description">Десять императоров — от Шуньчжи до Сюаньтуна.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="han" aria-label="Открыть родословное древо династии Хань">
+          <span class="dynasty-card__watermark" aria-hidden="true">Х</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Хань</span>
+          <span class="dynasty-card__meta">202 до н. э.–220 · Китай</span>
+          <span class="dynasty-card__description">Двадцать семь правителей Западной и Восточной Хань.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="song" aria-label="Открыть родословное древо династии Сун">
+          <span class="dynasty-card__watermark" aria-hidden="true">С</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Сун</span>
+          <span class="dynasty-card__meta">960–1279 · Китай</span>
+          <span class="dynasty-card__description">Восемнадцать императоров Северной и Южной Сун.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="yuan" aria-label="Открыть родословное древо династии Юань">
+          <span class="dynasty-card__watermark" aria-hidden="true">Ю</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Юань</span>
+          <span class="dynasty-card__meta">1271–1370 · Китай и Монголия</span>
+          <span class="dynasty-card__description">Десять императоров — от Хубилая до Тогон-Тэмура.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="yamato" aria-label="Открыть родословное древо дома Ямато">
+          <span class="dynasty-card__watermark" aria-hidden="true">Я</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Ямато</span>
+          <span class="dynasty-card__meta">1867 — настоящее время · Япония</span>
+          <span class="dynasty-card__description">Пять императоров современной эпохи — от Мэйдзи до Рэйва.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="joseon" aria-label="Открыть родословное древо Чосон">
+          <span class="dynasty-card__watermark" aria-hidden="true">Ч</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Чосон</span>
+          <span class="dynasty-card__meta">1392–1910 · Корея</span>
+          <span class="dynasty-card__description">Двадцать семь правителей — от Тэджо до Сунджона.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="umayyads" aria-label="Открыть родословное древо Омейядов">
+          <span class="dynasty-card__watermark" aria-hidden="true">Ом</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Омейяды</span>
+          <span class="dynasty-card__meta">661–1031 · Дамаск и Кордова</span>
+          <span class="dynasty-card__description">Тридцать правителей — от Муавии I до Хишама III.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="abbasids" aria-label="Открыть родословное древо Аббасидов">
+          <span class="dynasty-card__watermark" aria-hidden="true">Аб</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Аббасиды</span>
+          <span class="dynasty-card__meta">750–1258 · Багдад</span>
+          <span class="dynasty-card__description">Тридцать семь халифов — от ас-Саффаха до аль-Мустасима.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="fatimids" aria-label="Открыть родословное древо Фатимидов">
+          <span class="dynasty-card__watermark" aria-hidden="true">Ф</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Фатимиды</span>
+          <span class="dynasty-card__meta">909–1171 · Египет и Северная Африка</span>
+          <span class="dynasty-card__description">Четырнадцать халифов — от аль-Махди до аль-Адида.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="ottomans" aria-label="Открыть родословное древо Османов">
+          <span class="dynasty-card__watermark" aria-hidden="true">Ос</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Османы</span>
+          <span class="dynasty-card__meta">1299–1924 · Османская империя</span>
+          <span class="dynasty-card__description">Тридцать шесть султанов и последний халиф.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="mughals" aria-label="Открыть родословное древо Великих Моголов">
+          <span class="dynasty-card__watermark" aria-hidden="true">ВМ</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Великие Моголы</span>
+          <span class="dynasty-card__meta">1526–1857 · Индия</span>
+          <span class="dynasty-card__description">Девятнадцать падишахов — от Бабура до Бахадур-шаха II.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="timurids" aria-label="Открыть родословное древо Тимуридов">
+          <span class="dynasty-card__watermark" aria-hidden="true">Ти</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Тимуриды</span>
+          <span class="dynasty-card__meta">1370–1507 · Средняя Азия и Иран</span>
+          <span class="dynasty-card__description">Восемь правителей — от Тимура до Бади аз-Замана.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <article class="dynasty-card dynasty-card--future">
+          <span class="dynasty-card__status">Вне основной подборки</span>
+          <h3 class="dynasty-card__title">Габсбурги</h3>
+          <p class="dynasty-card__meta">1273–1918 · Европа</p>
+          <p class="dynasty-card__description">Правление началось в XIII веке, но продолжилось до XX. Древо в текущую средневековую подборку не включено.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="treeScreen" aria-labelledby="treeTitle" hidden>
+      <button class="back-button" id="backButton" type="button">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="m15 18-6-6 6-6M9 12h11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Назад к династиям
+      </button>
+
+      <div class="tree-heading">
+        <div>
+          <p class="kicker">Родословное древо</p>
+          <h1 id="treeTitle">Дом Романовых</h1>
+        </div>
+        <div class="tree-heading__meta" id="treeMeta"><span>1613–1917</span><span>Россия</span><span>15 фигур</span></div>
+      </div>
+
+      <div class="tree-intro">
+        <p id="treeIntroText">От основателя династии к последнему императору. Нажмите на любого человека, чтобы открыть биографию.</p>
+        <p class="tree-intro__hint"><span class="hint-line" aria-hidden="true"></span> Линии показывают родство между поколениями</p>
+      </div>
+
+      <div class="tree-legend" aria-label="Обозначения карточек в древе">
+        <span><i class="legend-swatch legend-swatch--nicknamed" aria-hidden="true"></i>С прозвищем — золотая рамка</span>
+        <span><i class="legend-swatch" aria-hidden="true"></i>Без прозвища — пунктирная рамка</span>
+      </div>
+
+      <div class="tree-scroll" id="treeScroll" tabindex="0" aria-label="Древо Романовых. На небольшом экране прокручивайте древо по горизонтали.">
+        <div class="tree-canvas" id="treeCanvas">
+          <svg class="tree-connections" id="treeConnections" aria-hidden="true"></svg>
+          <div id="treeGenerations"></div>
+        </div>
+      </div>
+      <p class="editorial-note">Для правителей до эпохи фотографии использованы портреты, миниатюры, фрески, монеты и печати. Тип изображения, автор и лицензия указаны в карточке. У каждого прозвища объясняются происхождение и датировка; если первое упоминание неизвестно, это отмечено прямо. Научная публикация исторического текста не выдаётся за скан первоисточника.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>История в лицах, от первого поколения к следующему.</p>
+  </footer>
+
+  <div class="modal" id="personModal" hidden>
+    <section class="modal-dialog" id="modalDialog" role="dialog" aria-modal="true" aria-labelledby="modalName" tabindex="-1">
+      <button class="modal-close" id="modalClose" type="button" aria-label="Закрыть карточку">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+      <div class="modal-portrait" id="modalPortrait"></div>
+      <div class="modal-content">
+        <p class="modal-content__eyebrow" id="modalReign"></p>
+        <h2 id="modalName"></h2>
+        <p class="modal-content__life" id="modalLife"></p>
+        <p class="modal-content__title" id="modalTitle"></p>
+        <p class="modal-content__bio" id="modalBio"></p>
+        <div class="modal-nickname">
+          <span id="modalNicknameLabel">Устоявшееся прозвище</span>
+          <strong id="modalNickname"></strong>
+          <span class="modal-nickname__label">Происхождение и датировка</span>
+          <p class="modal-nickname__note" id="modalNicknameNote"></p>
+          <div class="modal-source" id="modalPrimaryBlock" hidden>
+            <span class="modal-source__label">Исторический текст / ранняя фиксация</span>
+            <a class="source-link" id="modalPrimarySource" target="_blank" rel="noopener noreferrer" hidden></a>
+            <p class="modal-source__note" id="modalPrimarySourceNote"></p>
+          </div>
+          <div class="modal-source" id="modalResearchBlock" hidden>
+            <span class="modal-source__label">Современное исследование или справочник</span>
+            <a class="source-link" id="modalNicknameSource" target="_blank" rel="noopener noreferrer" hidden></a>
+          </div>
+        </div>
+        <div class="photo-credit">
+          <span>Об изображении</span>
+          <p id="modalPhotoMeta"></p>
+          <a class="source-link" id="modalPhotoSource" target="_blank" rel="noopener noreferrer" aria-label="Источник изображения и сведения о лицензии на Wikimedia Commons. Откроется в новой вкладке" hidden>Источник изображения и лицензия ↗</a>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

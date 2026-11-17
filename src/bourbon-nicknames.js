@@ -1,0 +1,8 @@
+window.NICKNAME_SCHOLARSHIP = window.NICKNAME_SCHOLARSHIP || {};
+Object.assign(window.NICKNAME_SCHOLARSHIP, {
+  bourbon_henry_iv: { note: '«Великий» (le Grand) — устойчивое почётное наименование Генриха IV за завершение религиозных войн и восстановление королевства.', source: 'https://www.britannica.com/biography/Henry-IV-king-of-France', sourceLabel: 'Encyclopaedia Britannica: «Henry IV»' },
+  bourbon_louis_xiii: { note: '«Справедливый» (le Juste) — устойчивое наименование Людовика XIII. Оно связывалось с королевским правосудием и не является оценкой всех сторон его правления.', source: 'https://www.britannica.com/biography/Louis-XIII', sourceLabel: 'Encyclopaedia Britannica: «Louis XIII»' },
+  bourbon_louis_xiv: { note: '«Король-Солнце» (Roi Soleil) связано с образом солнца в придворной символике Людовика XIV и его ролью Аполлона в балете 1653 года.', source: 'https://www.britannica.com/biography/Louis-XIV-king-of-France', sourceLabel: 'Encyclopaedia Britannica: «Louis XIV»' },
+  bourbon_louis_xv: { note: '«Любимый» (le Bien-Aimé) закрепилось за Людовиком XV в начале правления, особенно после выздоровления в 1744 году. Позднее его популярность резко снизилась.', source: 'https://www.britannica.com/biography/Louis-XV', sourceLabel: 'Encyclopaedia Britannica: «Louis XV»' },
+  bourbon_henry_v: { note: '«Чудесное дитя» (l’Enfant du Miracle) относится к посмертному рождению Генриха после убийства его отца, герцога Беррийского, в 1820 году.', source: 'https://www.britannica.com/biography/Henry-Dieudonne-dArtois-count-de-Chambord', sourceLabel: 'Encyclopaedia Britannica: «Henry, count de Chambord»' }
+});
