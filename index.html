@@ -72,6 +72,11 @@
   <script src="./src/ottomans.js?v=61" defer></script>
   <script src="./src/mughals.js?v=62" defer></script>
   <script src="./src/timurids.js?v=63" defer></script>
+  <script src="./src/jimenez.js?v=64" defer></script>
+  <script src="./src/merovingians.js?v=64" defer></script>
+  <script src="./src/norman.js?v=64" defer></script>
+  <script src="./src/ottonians.js?v=64" defer></script>
+  <script src="./src/hauteville.js?v=65" defer></script>
   <script src="./src/nickname-sources.js?v=56" defer></script>
   <script src="./src/european-nicknames.js?v=56" defer></script>
   <script src="./src/piast-nicknames.js?v=56" defer></script>
@@ -111,6 +116,11 @@
   <script src="./src/ottoman-nicknames.js?v=61" defer></script>
   <script src="./src/mughal-nicknames.js?v=62" defer></script>
   <script src="./src/timurid-nicknames.js?v=63" defer></script>
+  <script src="./src/jimenez-nicknames.js?v=64" defer></script>
+  <script src="./src/norman-nicknames.js?v=64" defer></script>
+  <script src="./src/merovingian-nicknames.js?v=64" defer></script>
+  <script src="./src/ottonian-nicknames.js?v=64" defer></script>
+  <script src="./src/hauteville-nicknames.js?v=65" defer></script>
   <script src="./src/remaining-nicknames.js?v=63" defer></script>
   <script src="./src/app.js?v=56" defer></script>
 </head>
@@ -138,8 +148,8 @@
           <p class="hero__lead">Проследите смену поколений и познакомьтесь с людьми, чьи решения меняли историю. Сорок три династических древа — с историческими изображениями, биографиями и источниками прозвищ.</p>
         </div>
         <dl class="hero__stats" aria-label="Краткая статистика">
-          <div><dt>Династии</dt><dd>60</dd></div>
-          <div><dt>Фигур в древах</dt><dd>789</dd></div>
+          <div><dt>Династии</dt><dd>65</dd></div>
+          <div><dt>Фигур в древах</dt><dd>865</dd></div>
           <div><dt>Охват</dt><dd>X–XX вв.</dd></div>
         </dl>
       </div>
@@ -690,6 +700,51 @@
           <span class="dynasty-card__title">Тимуриды</span>
           <span class="dynasty-card__meta">1370–1507 · Средняя Азия и Иран</span>
           <span class="dynasty-card__description">Восемь правителей — от Тимура до Бади аз-Замана.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="jimenez" aria-label="Открыть родословное древо династии Хименес">
+          <span class="dynasty-card__watermark" aria-hidden="true">Хи</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Хименес</span>
+          <span class="dynasty-card__meta">820–1173 · Наварра и Арагон</span>
+          <span class="dynasty-card__description">Семнадцать правителей наваррской и арагонской линий — от Гарсии I до Петронильи.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="merovingians" aria-label="Открыть родословное древо Меровингов">
+          <span class="dynasty-card__watermark" aria-hidden="true">М</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Меровинги</span>
+          <span class="dynasty-card__meta">457–751 · Франкское государство</span>
+          <span class="dynasty-card__description">Тридцать правителей — от Хильдериха I и Хлодовеха I до последнего короля Хилдериха III.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="norman" aria-label="Открыть родословное древо Нормандской династии">
+          <span class="dynasty-card__watermark" aria-hidden="true">Но</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Нормандская</span>
+          <span class="dynasty-card__meta">1066–1154 · Англия и Нормандия</span>
+          <span class="dynasty-card__description">Десять фигур — от Вильгельма Завоевателя до Вильгельма Булонского, через Английскую анархию.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="ottonians" aria-label="Открыть родословное древо Оттоновской династии">
+          <span class="dynasty-card__watermark" aria-hidden="true">От</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Оттоновская</span>
+          <span class="dynasty-card__meta">919–1024 · Германия и Священная Римская империя</span>
+          <span class="dynasty-card__description">Семь правителей — от Генриха I Птицелова до Генриха II Святого, создателей империи.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="hauteville" aria-label="Открыть родословное древо дома Отвилей (Готвилей)">
+          <span class="dynasty-card__watermark" aria-hidden="true">О</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Отвили (Готвили)</span>
+          <span class="dynasty-card__meta">1071–1194 · Южная Италия и Сицилия</span>
+          <span class="dynasty-card__description">Двенадцать представителей норманнского рода — от Роберта Гвискара и Рожера I до Вильгельма III, создателей Королевства Сицилия.</span>
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 

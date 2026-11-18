@@ -1,0 +1,12 @@
+window.NICKNAME_SCHOLARSHIP = window.NICKNAME_SCHOLARSHIP || {};
+Object.assign(window.NICKNAME_SCHOLARSHIP, {
+  jim_fortun: { note: '«Монах» (el Monje) — отрёкся от престола в 905 году и ушёл в монастырь Лейре.', source: 'https://www.britannica.com/biography/Fortun-Garcia', sourceLabel: 'Encyclopaedia Britannica: «Fortún García»' },
+  jim_garcia_sanchez_i: { note: '«Дрожащий» (el Temblón) — связано с неврологическим заболеванием (тремором), которое упоминают летописцы.', source: 'https://www.britannica.com/biography/Garcia-Sanchez-I', sourceLabel: 'Encyclopaedia Britannica: «García Sánchez I»' },
+  jim_sancho_ii: { note: '«Абарка» (Abarca) — «в кожаных сандалиях» (abarca — вид простой обуви). Указывает на скромность или походки короля.', source: 'https://www.britannica.com/biography/Sancho-II-king-of-Navarre', sourceLabel: 'Encyclopaedia Britannica: «Sancho II»' },
+  jim_garcia_sanchez_ii: { note: '«Дрожащий» (el Temblón) — то же прозвище, что у деда Гарсии Санчеса I, от тем же симптома тремора.', source: 'https://www.britannica.com/biography/Garcia-Sanchez-II', sourceLabel: 'Encyclopaedia Britannica: «García Sánchez II»' },
+  jim_sancho_iii: { note: '«Великий» (el Mayor) — за объединение Наварры, Арагона, Кастилии и леонских земель под своей властью.', source: 'https://www.britannica.com/biography/Sancho-III', sourceLabel: 'Encyclopaedia Britannica: «Sancho III»' },
+  jim_garcia_sanchez_iii: { note: '«Нахерский» (el de Nájera) — по столице своего правления, городе Нахера.', source: 'https://www.britannica.com/biography/Garcia-Sanchez-III', sourceLabel: 'Encyclopaedia Britannica: «García Sánchez III»' },
+  jim_sancho_iv: { note: '«Благородный» (el Noble) — закрепилось посмертно после убийства короля родственниками в Пе냐льве.', source: 'https://www.britannica.com/biography/Sancho-IV-king-of-Navarre', sourceLabel: 'Encyclopaedia Britannica: «Sancho IV»' },
+  jim_alfonso_i: { note: '«Воин» (el Batallador) — за непрерывные военные кампании против мавров и расширение арагонских владений.', source: 'https://www.britannica.com/biography/Alfonso-I-king-of-Aragon', sourceLabel: 'Encyclopaedia Britannica: «Alfonso I»' },
+  jim_ramiro_ii: { note: '«Монах» (el Monje) — был епископом Родуа и монахом, стал королём после смерти брата Альфонсо I.', source: 'https://www.britannica.com/biography/Ramiro-II-king-of-Aragon', sourceLabel: 'Encyclopaedia Britannica: «Ramiro II»' }
+});

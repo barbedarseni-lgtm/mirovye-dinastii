@@ -1,0 +1,11 @@
+window.NICKNAME_SCHOLARSHIP = window.NICKNAME_SCHOLARSHIP || {};
+Object.assign(window.NICKNAME_SCHOLARSHIP, {
+  hau_robert_guiscard: { note: '«Гвискар» (Guiscard) — от старофранцузского viscart, «хитрый, ловкий». Прозвище закрепилось за Робертом за дипломатическую изворотливость и военные успехи.', source: 'https://www.britannica.com/biography/Robert-Guiscard', sourceLabel: 'Encyclopaedia Britannica: «Robert Guiscard»' },
+  hau_roger_i: { note: '«Боссо» (Bosso) — от итальянского bosso, «рыжий». Прозвище Рожера I, вероятно, связано с цветом волос.', source: 'https://www.britannica.com/biography/Roger-I', sourceLabel: 'Encyclopaedia Britannica: «Roger I»' },
+  hau_bohemond_i: { note: '«Тарентский» (di Taranto) — по княжеству Тарент в Южной Италии, которое Боэмунд получил от отца. Позднее закрепился как князь Антиохийский.', source: 'https://www.britannica.com/biography/Bohemond-I', sourceLabel: 'Encyclopaedia Britannica: «Bohemond I»' },
+  hau_roger_borsa: { note: '«Борса» (Borsa) — от итальянского borsa, «кошелёк». Прозвище дано за скупость и расчётливость Рожера Борсы.', source: 'https://www.britannica.com/biography/Roger-Borsa', sourceLabel: 'Encyclopaedia Britannica: «Roger Borsa»' },
+  hau_roger_ii: { note: '«Великий» (il Grande) — за объединение норманнских владений в Королевство Сицилия и покровительство искусству и науке при его дворе в Палермо.', source: 'https://www.britannica.com/biography/Roger-II', sourceLabel: 'Encyclopaedia Britannica: «Roger II»' },
+  hau_william_i: { note: '«Злой» (il Malo) — прозвище, данное враждебными ему баронскими хронистами за суровое подавление мятежей знати.', source: 'https://www.britannica.com/biography/William-I-king-of-Sicily', sourceLabel: 'Encyclopaedia Britannica: «William I»' },
+  hau_william_ii: { note: '«Добрый» (il Buono) — за мирное и справедливое правление; прозвище отражало контраст с репутацией отца Вильгельма I.', source: 'https://www.britannica.com/biography/William-II-king-of-Sicily', sourceLabel: 'Encyclopaedia Britannica: «William II»' },
+  hau_tancred_of_lecce: { note: '«Танкред Личче» — по графству Лечче, откуда происходил Танкред; также известен как «Танкред Сицилийский».', source: 'https://www.britannica.com/biography/Tancred-king-of-Sicily', sourceLabel: 'Encyclopaedia Britannica: «Tancred of Sicily»' }
+});

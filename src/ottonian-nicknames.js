@@ -1,0 +1,9 @@
+window.NICKNAME_SCHOLARSHIP = window.NICKNAME_SCHOLARSHIP || {};
+Object.assign(window.NICKNAME_SCHOLARSHIP, {
+  ott_henry_i: { note: '«Птицелов» (der Vogler) — по легенде Видукинд Корвейский писал, что когда к Генриху пришли с вестью об избрании королём, он был занят ловлей птиц на соколиной охоте.', source: 'https://www.britannica.com/biography/Henry-I-king-of-Germany', sourceLabel: 'Encyclopaedia Britannica: «Henry I»' },
+  ott_otto_i: { note: '«Великий» (der Große) — за восстановление империи на Западе (962) и создание Священной Римской империи; почётное наименование утвердилось в историографии с XII века.', source: 'https://www.britannica.com/biography/Otto-I', sourceLabel: 'Encyclopaedia Britannica: «Otto I»' },
+  ott_otto_ii: { note: '«Рыжий» (Rufus) — латинское прозвище со значением «рыжий», за рыжеватый цвет волос и бороды; встречается у хронистов Оттона Фрейзингенского.', source: 'https://www.britannica.com/biography/Otto-II-Holy-Roman-emperor', sourceLabel: 'Encyclopaedia Britannica: «Otto II»' },
+  ott_otto_iii: { note: '«Чудо мира» (Mirabilia mundi) — так называли Оттона III современники за его блестящее образование, знание нескольких языков и мечты о renovatio Римской империи.', source: 'https://www.britannica.com/biography/Otto-III', sourceLabel: 'Encyclopaedia Britannica: «Otto III»' },
+  ott_henry_ii_father: { note: '«Строптивый» (der Zänker) — за постоянные мятежи против императоров Оттона II и Оттона III. Прозвище закрепилось в баварской традиции.', source: 'https://www.britannica.com/biography/Henry-II-duke-of-Bavaria', sourceLabel: 'Encyclopaedia Britannica: «Henry II, Duke of Bavaria»' },
+  ott_henry_ii: { note: '«Святой» (der Heilige) — Генрих II был канонизирован папой Евгением III в 1146 году, редкий случай канонизации императора. Прозвище закрепилось после канонизации.', source: 'https://www.britannica.com/biography/Henry-II-Holy-Roman-emperor', sourceLabel: 'Encyclopaedia Britannica: «Henry II»' }
+});

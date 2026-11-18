@@ -1,0 +1,9 @@
+window.NICKNAME_SCHOLARSHIP = window.NICKNAME_SCHOLARSHIP || {};
+Object.assign(window.NICKNAME_SCHOLARSHIP, {
+  nor_william_i: { note: '«Завоеватель» (le Conquérant) — завоевание Англии в 1066 году и победа при Гастингсе сделали его самым известным носителем этого прозвища.', source: 'https://www.britannica.com/biography/William-I-king-of-England', sourceLabel: 'Encyclopaedia Britannica: «William the Conqueror»' },
+  nor_robert_curthose: { note: '«Короткие Штаны» (Curthose) — по латинской хронике Ордерика Виталия прозвище связывают с тем, что он носил короткую одежду, не соответствующую рыцарскому обычаю.', source: 'https://www.britannica.com/biography/Robert-duke-of-Normandy', sourceLabel: 'Encyclopaedia Britannica: «Robert Curthose»' },
+  nor_william_ii: { note: '«Руфус» (Rufus) — латинское прозвище со значением «рыжий». Указывает на рыжий цвет волос и лица короля.', source: 'https://www.britannica.com/biography/William-II-king-of-England', sourceLabel: 'Encyclopaedia Britannica: «William II Rufus»' },
+  nor_henry_i: { note: '«Боклерк» (Beauclerc) — французское прозвище, означающее «красивый учёный». Связано с образованностью короля и его покровительством книжникам.', source: 'https://www.britannica.com/biography/Henry-I-king-of-England', sourceLabel: 'Encyclopaedia Britannica: «Henry I Beauclerc»' },
+  nor_william_clito: { note: '«Клитский» (Clito) — от латинского clito, «наследник, защитник». Титулованное прозвище претендента на герцогство Нормандское, которое он так и не получил окончательно.', source: 'https://www.britannica.com/biography/William-Clito', sourceLabel: 'Encyclopaedia Britannica: «William Clito»' },
+  nor_empress_matilda: { note: '«Императрица» (Imperatrix) — титул, сохранившийся после брака с императором Генрихом V, хотя на родине её чаще называли «леди англичан».', source: 'https://www.britannica.com/biography/Matilda-empress', sourceLabel: 'Encyclopaedia Britannica: «Matilda»' }
+});

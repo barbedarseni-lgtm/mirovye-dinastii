@@ -3480,5 +3480,385 @@ window.DYNASTY_IMAGE_SOURCES = {
     "source": "https://commons.wikimedia.org/wiki/File:Portrait_of_Prince_Bad%C4%AB%CA%BF_al-Zam%C4%81n,_in_The_two_wrestlers_performing_in_front_of_the_Sultan,_Sa%CA%BFd%C4%AB%E2%80%99s_Gulist%C4%81n,_Art_and_History_Trust_Collection,_Herat_in_1486.jpg",
     "license": "Public domain",
     "artist": "См. источник изображения"
+  },
+  "jim_garcia_i": {
+    "source": "https://commons.wikimedia.org/wiki/File:Garc%C3%ADa_%C3%8D%C3%B1iguez_de_Pamplona_(Diputaci%C3%B3n_Provincial_de_Zaragoza).jpg",
+    "license": "Public domain",
+    "artist": "Manuel Aguirre y Monsalbe"
+  },
+  "jim_fortun": {
+    "source": "https://commons.wikimedia.org/wiki/File:Fortun_Garces.jpg",
+    "license": "Public domain",
+    "artist": "Unknown authorUnknown author"
+  },
+  "jim_sancho_i": {
+    "source": "https://commons.wikimedia.org/wiki/File:Sancho_Garc%C3%A9s_I_de_Pamplona.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Meluzína"
+  },
+  "jim_jimeno": {
+    "source": "https://commons.wikimedia.org/wiki/File:Eduardo_Jimeno_Correas_10.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Ajzh2074"
+  },
+  "jim_garcia_sanchez_i": {
+    "source": "https://commons.wikimedia.org/wiki/File:Garcia_Sanchez_I.jpg",
+    "license": "Public domain",
+    "artist": "Unknown authorUnknown author"
+  },
+  "jim_sancho_ii": {
+    "source": "https://commons.wikimedia.org/wiki/File:Sepulcro_de_Sancho_Garc%C3%A9s_II,_Abarca._Pante%C3%B3n_Real_de_Monasterio_de_Santa_Mar%C3%ADa_la_Real_de_N%C3%A1jera.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Jl FilpoC"
+  },
+  "jim_garcia_sanchez_ii": {
+    "source": "https://commons.wikimedia.org/wiki/File:Garc%C3%ADa_S%C3%A1nchez_II_de_Pamplona_(Diputaci%C3%B3n_Provincial_de_Zaragoza).jpg",
+    "license": "Public domain",
+    "artist": "Manuel Aguirre y Monsalbe"
+  },
+  "jim_sancho_iii": {
+    "source": "https://commons.wikimedia.org/wiki/File:Sancho_Garc%C3%A9s_III_de_Pamplona_-_Palacio_Real_-_Madrid_01.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Javier Perez Montes"
+  },
+  "jim_garcia_sanchez_iii": {
+    "source": "https://commons.wikimedia.org/wiki/File:Monnaie_-_B%C3%A9arn_et_Navarre,_Royaume_de_Navarre,_Garcia_III,_denier,_1035-1054_-_btv1b11382727h_(2_of_2).jpg",
+    "license": "Public domain",
+    "artist": "García (10..-1054 ; roi de Navarrre). Autorité émettrice de monnaie"
+  },
+  "jim_ferrando_i": {
+    "source": "https://commons.wikimedia.org/wiki/File:Fernando_I,_rei_consorte_da_Galiza.jpg",
+    "license": "Public domain",
+    "artist": "Unknown authorUnknown author"
+  },
+  "mer_dagobert_i": {
+    "source": "https://commons.wikimedia.org/wiki/File:Jena,_MS_El._f._65,_fol._138r,_detail.png",
+    "license": "Public domain",
+    "artist": "The original uploader was Srnec at English Wikipedia."
+  },
+  "mer_charibert_ii": {
+    "source": "https://commons.wikimedia.org/wiki/File:Caribert_II_tiers_de_sou_d%27or_(tr%C3%A9missis)-2.jpg",
+    "license": "Public domain",
+    "artist": "derivative work: Peer (talk) Caribert_II_tiers_de_sou_d'or_(trémissis).jpg: Atelier de Banassac http://www.bnf.fr"
+  },
+  "mer_sigebert_iii": {
+    "source": "https://commons.wikimedia.org/wiki/File:Solidus_de_Sigebert_III_frapp%C3%A9_%C3%A0_Marseille.jpeg",
+    "license": "Public domain",
+    "artist": "Unknown authorUnknown author"
+  },
+  "mer_clovis_ii": {
+    "source": "https://commons.wikimedia.org/wiki/File:Tiers_de_sous_d%27or_de_Clovis_II.png",
+    "license": "Public domain",
+    "artist": "Tiers_de_sous_d'or_de_Clovis_II.jpg: Eligius derivative work: Leovilok (talk)"
+  },
+  "mer_chlothar_iii": {
+    "source": "https://commons.wikimedia.org/wiki/File:Portrait_Roi_de_france_Clotaire_III.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "The original uploader was Rinaldum at French Wikipedia."
+  },
+  "mer_childeric_ii": {
+    "source": "https://commons.wikimedia.org/wiki/File:Childeric_II.jpg",
+    "license": "Public domain",
+    "artist": "Published by Guillaume Rouille (1518?-1589)"
+  },
+  "mer_theuderic_iii": {
+    "source": "https://commons.wikimedia.org/wiki/File:Theuderic_III.jpg",
+    "license": "Public domain",
+    "artist": "Published by Guillaume Rouille(1518?-1589)"
+  },
+  "mer_dagobert_ii": {
+    "source": "https://commons.wikimedia.org/wiki/File:Portret_van_koning_Dagobert_II,_RP-P-1911-1291.jpg",
+    "license": "CC0",
+    "artist": "Rijksmuseum"
+  },
+  "mer_clovis_iii": {
+    "source": "https://commons.wikimedia.org/wiki/File:Portrait_Roi_de_france_Clovis_IV.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "The original uploader was Rinaldum at French Wikipedia."
+  },
+  "mer_childebert_iii": {
+    "source": "https://commons.wikimedia.org/wiki/File:Childebert_III_694_711.jpg",
+    "license": "Public domain",
+    "artist": "PHGCOM"
+  },
+  "jim_ramiro_i_aragon": {
+    "source": "https://commons.wikimedia.org/wiki/File:Ramiro_I_de_Arag%C3%B3n_(1100-1145).jpeg",
+    "license": "Public domain",
+    "artist": "Ramiro_I_y_Sancho_Ramírez_(1100-1145).jpeg: Anónimo derivative work: Escarlati (talk)"
+  },
+  "jim_sancho_iv": {
+    "source": "https://commons.wikimedia.org/wiki/File:Sancho_IV_the_Noble.jpg",
+    "license": "Public domain",
+    "artist": "Unknown authorUnknown author"
+  },
+  "jim_sancho_ramirez": {
+    "source": "https://commons.wikimedia.org/wiki/File:Sancho_Ram%C3%ADrez_(1100-1145).jpeg",
+    "license": "Public domain",
+    "artist": "Ramiro_I_y_Sancho_Ramírez_(1100-1145).jpeg: Anónimo derivative work: Escarlati (talk)"
+  },
+  "jim_pedro_i": {
+    "source": "https://commons.wikimedia.org/wiki/File:Losa_sepulcral_de_Pedro_I_de_Arag%C3%B3n_(Real_Monasterio_de_San_Juan_de_la_Pe%C3%B1a).jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Jl FilpoC"
+  },
+  "jim_alfonso_i": {
+    "source": "https://commons.wikimedia.org/wiki/File:Alfonso_the_Battler,_Calatayud,_Arag%C3%B3n,_Spain.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Florent Pécassou"
+  },
+  "jim_ramiro_ii": {
+    "source": "https://commons.wikimedia.org/wiki/File:Cap%C3%ADtols_matrimonials_de_Barbastre_(1137).png",
+    "license": "Public domain",
+    "artist": "Unknown authorUnknown author"
+  },
+  "jim_petronilla": {
+    "source": "https://commons.wikimedia.org/wiki/File:Will_of_Petronilla_of_Aragon_(corrupted).jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "AnonymousUnknown author"
+  },
+  "mer_childeric_i": {
+    "source": "https://commons.wikimedia.org/wiki/File:Childeric_tomb_1.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Adam Cli"
+  },
+  "mer_clovis_i": {
+    "source": "https://commons.wikimedia.org/wiki/File:Portret_van_Clovis_I,_RP-P-1910-2472.jpg",
+    "license": "CC0",
+    "artist": "Rijksmuseum"
+  },
+  "mer_theuderic_i": {
+    "source": "https://commons.wikimedia.org/wiki/File:Delpech_-_Theuderic_I.jpg",
+    "license": "Public domain",
+    "artist": "François-Séraphin Delpech"
+  },
+  "mer_chlodomer": {
+    "source": "https://commons.wikimedia.org/wiki/File:Clodomir_supervise_l%27execution_de_Sigismond.jpg",
+    "license": "Public domain",
+    "artist": "Unknown authorUnknown author"
+  },
+  "mer_childebert_i": {
+    "source": "https://commons.wikimedia.org/wiki/File:Roi_Childebert_Louvre_ML93.jpg",
+    "license": "CC0",
+    "artist": "anonymous"
+  },
+  "mer_chlothar_i": {
+    "source": "https://commons.wikimedia.org/wiki/File:Monvoisin_-_Chlothar_II.jpg",
+    "license": "Public domain",
+    "artist": "Raymond Monvoisin"
+  },
+  "mer_theudebert_i": {
+    "source": "https://commons.wikimedia.org/wiki/File:Theudebert_I_von_Austrasien.jpg",
+    "license": "CC0",
+    "artist": "Verfasser: Terzio, Francesco / Oselli, Gaspare"
+  },
+  "mer_clodoald": {
+    "source": "https://commons.wikimedia.org/wiki/File:Saint-Cloud_%C3%89glise_Saint-Clodoald_003.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Moonik"
+  },
+  "mer_charibert_i": {
+    "source": "https://commons.wikimedia.org/wiki/File:Estampes_par_Nicolas_de_Larmessin.f017.Caribert_I,_roi_des_Francs.jpg",
+    "license": "Public domain",
+    "artist": "Nicolas de Larmessin"
+  },
+  "mer_guntram": {
+    "source": "https://commons.wikimedia.org/wiki/File:Guntram_Pauli.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Bucherius"
+  },
+  "mer_sigebert_i": {
+    "source": "https://commons.wikimedia.org/wiki/File:Assassinat_de_Sigebert_Ier.jpg",
+    "license": "Public domain",
+    "artist": "Jean Fouquet"
+  },
+  "mer_chilperic_i": {
+    "source": "https://commons.wikimedia.org/wiki/File:Portrait_Roi_de_france_Chilp%C3%A9ric_roy_de_France.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "User Rinaldum on fr.wikipedia"
+  },
+  "mer_childebert_ii": {
+    "source": "https://commons.wikimedia.org/wiki/File:Gontran_devant_Childebert_II.jpg",
+    "license": "Public domain",
+    "artist": "Unknown authorUnknown author"
+  },
+  "mer_chlothar_ii": {
+    "source": "https://commons.wikimedia.org/wiki/File:Clotaire_II_Lombards.jpg",
+    "license": "Public domain",
+    "artist": "Attilio in en-Wiki, Claus Ableiter tranferred in Commons"
+  },
+  "mer_theudebert_ii": {
+    "source": "https://commons.wikimedia.org/wiki/File:Division_of_Gaul_-_587.jpg",
+    "license": "Public domain",
+    "artist": "Paul Vidal de La Blache"
+  },
+  "mer_theuderic_ii": {
+    "source": "https://commons.wikimedia.org/wiki/File:M%C3%A9daille_-_Galerie_numismatique_des_rois_de_France_-_btv1b10673140j_(1_of_2).jpg",
+    "license": "Public domain",
+    "artist": "Caqué, Auguste Antoine (1793-1881). Graveur"
+  },
+  "mer_dagobert_iii": {
+    "source": "https://commons.wikimedia.org/wiki/File:Portrait_Roi_de_france_Dagobert_II_(i.e_III).jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "The original uploader was Rinaldum at French Wikipedia."
+  },
+  "mer_chilperic_ii": {
+    "source": "https://commons.wikimedia.org/wiki/File:Jean_Dassier_(1676-1763)_-_Chilp%C3%A9ric_II_roy_de_France_(670-721).jpg",
+    "license": "Public domain",
+    "artist": "Jean Dassier / Bibliothèque nationale de France"
+  },
+  "mer_childeric_iii": {
+    "source": "https://commons.wikimedia.org/wiki/File:Theuderic_III.jpg",
+    "license": "Public domain",
+    "artist": "Published by Guillaume Rouille(1518?-1589)"
+  },
+  "nor_william_i": {
+    "source": "https://commons.wikimedia.org/wiki/File:Portrait_of_William_the_Conqueror_(4673901).jpg",
+    "license": "Public domain",
+    "artist": "John Pye"
+  },
+  "nor_robert_curthose": {
+    "source": "https://commons.wikimedia.org/wiki/File:Robert_Curthose_-_MS_Royal_14_B_VI.png",
+    "license": "Public domain",
+    "artist": "Unknown authorUnknown author"
+  },
+  "nor_william_ii": {
+    "source": "https://commons.wikimedia.org/wiki/File:William_II_of_England.jpg",
+    "license": "Public domain",
+    "artist": "Matthew Paris"
+  },
+  "nor_henry_i": {
+    "source": "https://commons.wikimedia.org/wiki/File:Henry1.jpg",
+    "license": "Public domain",
+    "artist": "Matthew Paris"
+  },
+  "nor_stephen": {
+    "source": "https://commons.wikimedia.org/wiki/File:Stephen_of_Blois,_King_of_England_stained_glass_Faversham.jpg",
+    "license": "CC0",
+    "artist": "NerdAssembledy"
+  },
+  "nor_william_clito": {
+    "source": "https://commons.wikimedia.org/wiki/File:Seal_of_William_Clito.jpg",
+    "license": "Public domain",
+    "artist": "Unknown authorUnknown author"
+  },
+  "nor_william_aetheling": {
+    "source": "https://commons.wikimedia.org/wiki/File:An_island_story;_a_child%27s_history_of_England_(1906)_(14801009523).jpg",
+    "license": "No restrictions",
+    "artist": "Internet Archive Book Images"
+  },
+  "nor_empress_matilda": {
+    "source": "https://commons.wikimedia.org/wiki/File:Empress_Matilda.png",
+    "license": "Public domain",
+    "artist": "Artist unknown; the Gospels of Henry the Lion"
+  },
+  "nor_eustace": {
+    "source": "https://commons.wikimedia.org/wiki/File:Eust4Boul02.jpg",
+    "license": "Public domain",
+    "artist": "Faustin Poey d'Avant (1792–1864)"
+  },
+  "nor_william_boulogne": {
+    "source": "https://commons.wikimedia.org/wiki/File:William_Duke_of_Normandy_accompanied_by_Eustatius_Count_of_Boulogne_and_followed_by_his_Knights_in_arms_Military_Dress_of_the_Eleventh_Century_from_Bayeux_Tapestry_said_to_have_been_worked_by_Queen_Matilda.png",
+    "license": "Public domain",
+    "artist": "См. источник изображения"
+  },
+  "ott_henry_i": {
+    "source": "https://commons.wikimedia.org/wiki/File:Henry_I_the_Fowler.JPG",
+    "license": "Public domain",
+    "artist": "Anonymous plate"
+  },
+  "ott_otto_i": {
+    "source": "https://commons.wikimedia.org/wiki/File:Grave_of_Otto_I,_Holy_Roman_Emperor.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Chris 73 Talk"
+  },
+  "ott_henry_i_bavaria": {
+    "source": "https://commons.wikimedia.org/wiki/File:Henry_I,_Duke_of_Bavaria.jpg",
+    "license": "Public domain",
+    "artist": "AnonymousUnknown author"
+  },
+  "ott_otto_ii": {
+    "source": "https://commons.wikimedia.org/wiki/File:Eduard_Jakob_von_Steinle_-_The_Holy_Roman_Emperor_Otto_II_escaping_from_the_Greeks,_982.jpg",
+    "license": "Public domain",
+    "artist": "Eduard von Steinle"
+  },
+  "ott_henry_ii_father": {
+    "source": "https://commons.wikimedia.org/wiki/File:Henry_II,_Duke_of_Bavaria.jpg",
+    "license": "Public domain",
+    "artist": "AnonymousUnknown author"
+  },
+  "ott_otto_iii": {
+    "source": "https://commons.wikimedia.org/wiki/File:Clm_4453_fol_24r_Detail_Herrscherbild.jpg",
+    "license": "Public domain",
+    "artist": "Unknown authorUnknown author"
+  },
+  "ott_henry_ii": {
+    "source": "https://commons.wikimedia.org/wiki/File:Kronung_Heinrich_II.jpg",
+    "license": "Public domain",
+    "artist": "anonymous"
+  },
+  "mer_theudebald": {
+    "source": "https://commons.wikimedia.org/wiki/File:Le_royaume_des_Francs_en_548.svg",
+    "license": "Public domain",
+    "artist": "Romain0"
+  },
+  "hau_robert_guiscard": {
+    "source": "https://commons.wikimedia.org/wiki/File:Robert_Guiscard_(by_Merry-Joseph_Blondel).jpg",
+    "license": "Public domain",
+    "artist": "Merry-Joseph Blondel"
+  },
+  "hau_roger_i": {
+    "source": "https://commons.wikimedia.org/wiki/File:Roger_I_of_Sicily_and_Judith_d%27Evreux.jpg",
+    "license": "Public domain",
+    "artist": "An artist from Château de Pirou, Normandia"
+  },
+  "hau_bohemond_i": {
+    "source": "https://commons.wikimedia.org/wiki/File:Bohemond_I_of_Antioch_lib_(Cropped).jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Maître de Fauvel"
+  },
+  "hau_roger_borsa": {
+    "source": "https://commons.wikimedia.org/wiki/File:Salerno_Follaro_75001317.jpg",
+    "license": "CC BY-SA 2.5",
+    "artist": "CNG"
+  },
+  "hau_simon": {
+    "source": "https://commons.wikimedia.org/wiki/File:Tankret_Hauteville_Stammbaum.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Benutzer:Yorg"
+  },
+  "hau_roger_ii": {
+    "source": "https://commons.wikimedia.org/wiki/File:Roger_II_of_Sicily.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Nero Reising"
+  },
+  "hau_roger_iii": {
+    "source": "https://commons.wikimedia.org/wiki/File:Scifato_ducale.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "См. источник изображения"
+  },
+  "hau_william_i": {
+    "source": "https://commons.wikimedia.org/wiki/File:William_I_of_Sicily.jpg",
+    "license": "Public domain",
+    "artist": "См. источник изображения"
+  },
+  "hau_william_ii": {
+    "source": "https://commons.wikimedia.org/wiki/File:Unknown_artist_-_King_William_II_Presenting_the_Virgin_Mary_with_a_Model_of_Monreale_Cathedral_-_WGA16268.jpg",
+    "license": "Public domain",
+    "artist": "Unknown authorUnknown author"
+  },
+  "hau_tancred_of_lecce": {
+    "source": "https://commons.wikimedia.org/wiki/File:Tancred_von_Lecce.jpg",
+    "license": "Public domain",
+    "artist": "Peter of Eboli"
+  },
+  "hau_william_iii": {
+    "source": "https://commons.wikimedia.org/wiki/File:William_III_of_Sicily.jpg",
+    "license": "Public domain",
+    "artist": "См. источник изображения"
+  },
+  "hau_constance": {
+    "source": "https://commons.wikimedia.org/wiki/File:Constance%27s_sarcophagus_in_Palermo_Cathedral.jpg",
+    "license": "Public domain",
+    "artist": "Sibeaster"
   }
 };

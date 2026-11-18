@@ -1,0 +1,6 @@
+window.NICKNAME_SCHOLARSHIP = window.NICKNAME_SCHOLARSHIP || {};
+Object.assign(window.NICKNAME_SCHOLARSHIP, {
+  mer_theudebert_i: { note: '«Великий» (Magnus) — почётное наименование из поздних королевских списках, связывавшее его с образцом великого франкского короля; при жизни закрепления прозвища не подтверждено.', source: 'https://www.britannica.com/biography/Theudebert-I', sourceLabel: 'Encyclopaedia Britannica: «Theudebert I»' },
+  mer_childebert_iii: { note: '«Справедливый» (le Juste) — позднее французское прозвище Хильдеберта III, связанное с его попытками упорядочить судопроизводство; в прижизненных источниках как устойчивое прозвище не фиксируется.', source: 'https://www.britannica.com/biography/Childebert-III', sourceLabel: 'Encyclopaedia Britannica: «Childebert III»' },
+  mer_childeric_iii: { note: '«Бездельник» (le Fainéant) — прозвище группы «королей-марионеток» VII–VIII веков; закрепилось за Хилдерихом III как за последним Меровингом, реальная власть у которого принадлежала мажордомам.', source: 'https://www.britannica.com/biography/Childeric-III', sourceLabel: 'Encyclopaedia Britannica: «Childeric III»' }
+});
