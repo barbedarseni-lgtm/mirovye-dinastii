@@ -206,11 +206,11 @@
     if (returnFocus && activeDynastyCard) activeDynastyCard.focus({ preventScroll: true });
   }
 
-  function openPerson(personId) {
+  function openPerson(personId, focusElement = null) {
     const dynasty = window.DYNASTIES[currentDynastyId];
     const person = dynasty?.members.find((item) => item.id === personId);
     if (!person) return;
-    lastFocusedElement = document.activeElement;
+    lastFocusedElement = focusElement || document.activeElement;
 
     const modalPortrait = document.getElementById('modalPortrait');
     modalPortrait.replaceChildren();
@@ -413,6 +413,157 @@
     search.addEventListener('input', renderCatalog);
     clearSearch.addEventListener('click', () => { search.value = ''; renderCatalog(); search.focus(); });
     renderCatalog();
+
+    // Поиск по правителям
+    const personSearch = document.getElementById('personSearch');
+    const clearPersonSearch = document.getElementById('clearPersonSearch');
+    const personSearchResults = document.getElementById('personSearchResults');
+    const personSearchStatus = document.getElementById('personSearchStatus');
+
+    if (personSearch && clearPersonSearch && personSearchResults && personSearchStatus) {
+      let currentFocusIndex = -1;
+      const MAX_PERSON_RESULTS = 8;
+      const personCollator = new Intl.Collator('ru', { sensitivity: 'base' });
+
+      // Ранг релевантности совпадения (чем меньше, тем выше):
+      // 1 — точное совпадение полного имени или прозвища;
+      // 2 — имя/прозвище начинается с запроса;
+      // 3 — начало отдельного слова (имя, фамилия, римская цифра);
+      // 4 — совпадение внутри слова (только для запросов длиной 3+ букв).
+      function personMatchRank(person, nickname, q) {
+        const nameNorm = normalizeCatalogText(person.name);
+        const nickNorm = nickname ? normalizeCatalogText(nickname) : '';
+
+        if (nameNorm === q || nickNorm === q) return 1;
+        if (nameNorm.startsWith(q) || nickNorm.startsWith(q)) return 2;
+
+        const nameWords = nameNorm.split(/\s+/);
+        if (nameWords.some((word) => word.startsWith(q))) return 3;
+        if (nickNorm && nickNorm.split(/\s+/).some((word) => word.startsWith(q))) return 3;
+
+        if (q.length >= 3 && (nameNorm.includes(q) || nickNorm.includes(q))) return 4;
+        return null;
+      }
+
+      personSearch.addEventListener('input', () => {
+        clearPersonSearch.hidden = !personSearch.value;
+        const query = normalizeCatalogText(personSearch.value.trim());
+        if (!query) {
+          personSearchResults.hidden = true;
+          personSearch.setAttribute('aria-expanded', 'false');
+          personSearchStatus.textContent = '';
+          return;
+        }
+
+        // Собираем все совпадения с рейтингом
+        const matches = [];
+        for (const dynasty of Object.values(window.DYNASTIES)) {
+          for (const person of dynasty.members) {
+            const nameNorm = normalizeCatalogText(person.name);
+            const nicknameNorm = person.nickname ? normalizeCatalogText(person.nickname) : '';
+            const rank = personMatchRank(person, person.nickname, query);
+            if (rank != null) {
+              matches.push({ person, dynasty, type: nameNorm === query || nicknameNorm === query ? 'exact' : rank <= 2 ? 'starts' : rank <= 3 ? 'word-start' : 'contains', rank });
+            }
+          }
+        }
+
+        // Сортировка: сначала по рангу, затем по алфавиту/порядку появления
+        matches.sort((a, b) => {
+          if (a.rank !== b.rank) return a.rank - b.rank;
+          return personCollator.compare(a.person.name, b.person.name);
+        });
+
+        // Ограничиваем список
+        const limitedMatches = matches.slice(0, MAX_PERSON_RESULTS);
+
+        if (limitedMatches.length === 0) {
+          personSearchResults.hidden = true;
+          personSearch.setAttribute('aria-expanded', 'false');
+          personSearchStatus.textContent = 'Ничего не найдено';
+          return;
+        }
+
+        // Создаём варианты
+        personSearchResults.replaceChildren();
+        limitedMatches.forEach(({ person, dynasty, type }, index) => {
+          const option = document.createElement('div');
+          option.className = 'person-search__option';
+          option.setAttribute('role', 'option');
+          option.setAttribute('aria-selected', 'false');
+          option.dataset.index = index;
+          const displayName = limitedMatches[index].type === 'exact' ? `${person.name} (${person.nickname ? `«${person.nickname}»` : 'Нет прозвища'})` : limitedMatches[index].type === 'starts' ? (person.nickname ? `${person.name} «${person.nickname}»` : person.name) : person.name;
+          const metaText = person.reign || `${person.born}–${person.died}`;
+          option.innerHTML = `
+            <span class="person-search__option__name">${displayName}</span>
+            <span class="person-search__option__meta">${dynasty.name} (${metaText})</span>
+          `;
+          option.addEventListener('click', () => {
+            currentFocusIndex = -1;
+            personSearchResults.hidden = true;
+            personSearch.setAttribute('aria-expanded', 'false');
+            personSearchResults.setAttribute('aria-expanded', 'false');
+            showTree(dynasty.id);
+            // Фокус при закрытии карточки вернётся на кнопку человека в древе,
+            // а не на скрытый пункт выдачи поиска.
+            const personNode = treeGenerations.querySelector(`[data-person-id="${person.id}"]`);
+            openPerson(person.id, personNode);
+          });
+          personSearchResults.appendChild(option);
+        });
+
+        personSearchResults.hidden = false;
+        personSearchResults.setAttribute('aria-expanded', 'true');
+        personSearch.setAttribute('aria-expanded', 'true');
+        personSearchStatus.textContent = matches.length > limitedMatches.length
+          ? `Показано ${limitedMatches.length} из ${matches.length}`
+          : `Найдено: ${matches.length}`;
+        currentFocusIndex = -1;
+      });
+
+      // Клавиатурная навигация
+      personSearch.addEventListener('keydown', (event) => {
+        if (personSearchResults.hidden) return;
+
+        const options = [...personSearchResults.querySelectorAll('.person-search__option')];
+        if (event.key === 'Escape') {
+          personSearchResults.hidden = true;
+          personSearch.setAttribute('aria-expanded', 'false');
+          event.preventDefault();
+          return;
+        }
+        if (event.key === 'ArrowDown') {
+          event.preventDefault();
+          currentFocusIndex = Math.min(currentFocusIndex + 1, options.length - 1);
+          updateFocus(options);
+        } else if (event.key === 'ArrowUp') {
+          event.preventDefault();
+          currentFocusIndex = Math.max(currentFocusIndex - 1, 0);
+          updateFocus(options);
+        } else if (event.key === 'Enter' && currentFocusIndex >= 0) {
+          event.preventDefault();
+          options[currentFocusIndex].click();
+        }
+      });
+
+      function updateFocus(options) {
+        options.forEach((opt, i) => {
+          opt.setAttribute('aria-selected', String(i === currentFocusIndex));
+          if (i === currentFocusIndex) {
+            opt.scrollIntoView({ block: 'nearest' });
+          }
+        });
+      }
+
+      clearPersonSearch.addEventListener('click', () => {
+        personSearch.value = '';
+        clearPersonSearch.hidden = true;
+        personSearchResults.hidden = true;
+        personSearch.setAttribute('aria-expanded', 'false');
+        personSearchStatus.textContent = '';
+        personSearch.focus();
+      });
+    }
   }
 
   setupCatalog();
