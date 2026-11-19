@@ -271,8 +271,154 @@
     if (lastFocusedElement) lastFocusedElement.focus();
   }
 
-  document.querySelectorAll('[data-dynasty]').forEach((card) => {
-    card.addEventListener('click', () => showTree(card.dataset.dynasty, card));
+  function normalizeCatalogText(value) {
+    return String(value || '').toLocaleLowerCase('ru').replaceAll('ё', 'е').normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  }
+
+  function setupCatalog() {
+    const catalog = document.getElementById('dynastyCatalog');
+    const search = document.getElementById('dynastySearch');
+    const clearSearch = document.getElementById('clearDynastySearch');
+    const searchStatus = document.getElementById('catalogSearchStatus');
+    const alphabet = document.getElementById('alphabetIndex');
+    if (!catalog || !search || !clearSearch || !alphabet) return;
+
+    const sourceCards = [...catalog.querySelectorAll(':scope > [data-dynasty]')];
+    const futureCard = catalog.querySelector(':scope > .dynasty-card--future');
+    const countries = new Map();
+    const countryOrder = new Intl.Collator('ru', { sensitivity: 'base' });
+
+    sourceCards.forEach((card) => {
+      const names = (card.dataset.countries || 'Прочие').split('·').map((item) => item.trim()).filter(Boolean);
+      const title = card.querySelector('.dynasty-card__title')?.textContent.trim() || '';
+      const countryNames = names.length ? names : ['Прочие'];
+      // Индекс поиска: только название династии и связанные страны (без описаний/дат/имён).
+      const searchFields = [normalizeCatalogText(title), ...countryNames.map(normalizeCatalogText)];
+      countryNames.forEach((country) => {
+        if (!countries.has(country)) countries.set(country, []);
+        countries.get(country).push({ card, title, id: card.dataset.dynasty, searchFields });
+      });
+    });
+
+    catalog.replaceChildren();
+    const sections = new Map();
+    [...countries.keys()].sort(countryOrder.compare).forEach((country, index) => {
+      const slug = `country-${index}`;
+      const section = document.createElement('section');
+      section.className = 'country-section';
+      section.dataset.country = country;
+      section.id = slug;
+      const heading = document.createElement('h3');
+      const toggle = document.createElement('button');
+      toggle.className = 'country-section__toggle';
+      toggle.type = 'button';
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-controls', `${slug}-content`);
+      toggle.innerHTML = `<span>${country}</span><span class="country-section__count"></span><span class="country-section__chevron" aria-hidden="true">⌄</span>`;
+      heading.appendChild(toggle);
+      const content = document.createElement('div');
+      content.className = 'country-section__content';
+      content.id = `${slug}-content`;
+      content.hidden = true;
+      const grid = document.createElement('div');
+      grid.className = 'country-section__grid';
+      content.appendChild(grid);
+      section.append(heading, content);
+      catalog.appendChild(section);
+      sections.set(country, { section, toggle, content, grid, records: countries.get(country).sort((a, b) => countryOrder.compare(a.title, b.title)) });
+      toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        content.hidden = expanded;
+      });
+    });
+
+    if (futureCard) catalog.appendChild(futureCard);
+
+    let queryActive = false;
+    const alphabetCollator = new Intl.Collator('ru', { sensitivity: 'base' });
+
+    function rebuildAlphabet(letters) {
+      alphabet.replaceChildren();
+      [...letters].sort(alphabetCollator.compare).forEach((letter) => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.dataset.letter = letter;
+        button.textContent = letter;
+        button.setAttribute('aria-label', `Перейти к династиям на «${letter}»`);
+        button.addEventListener('click', () => {
+          const first = [...sections.values()]
+            .flatMap(({ grid }) => [...grid.querySelectorAll('.dynasty-card')])
+            .find((card) => normalizeCatalogText(card.querySelector('.dynasty-card__title')?.textContent).charAt(0).toUpperCase() === letter);
+          first?.scrollIntoView({ behavior: reducedMotion.matches ? 'auto' : 'smooth', block: 'start' });
+          first?.focus({ preventScroll: true });
+        });
+        alphabet.appendChild(button);
+      });
+    }
+
+    function renderCatalog() {
+      const query = normalizeCatalogText(search.value.trim());
+      const wasQueryActive = queryActive;
+      queryActive = Boolean(query);
+      const uniqueMatches = new Set();
+      const visibleLetters = new Set();
+      // Совпадение с полем (название или страна): короткий запрос — по началу,
+      // длинный — подстрокой. Короткие запросы не попадают в середину («ро»≠Каролинги).
+      const fieldMatches = (field, q) => (q.length < 3 ? field.startsWith(q) : field.includes(q));
+      // Совпадает ли страна секции с запросом (тогда показываем все её династии).
+      const countryMatchesQuery = (country) => query && fieldMatches(normalizeCatalogText(country), query);
+      const countryEntries = [...sections.values()];
+      countryEntries.forEach(({ section, toggle, content, grid, records }) => {
+        grid.replaceChildren();
+        const country = section.dataset.country;
+        const matches = records.filter(({ title, searchFields }) => {
+          if (!query) return true;
+          const nameField = normalizeCatalogText(title);
+          const nameHit = fieldMatches(nameField, query);
+          // Страна учитывается только если запрос совпал с названием этой страны (а не с чужой),
+          // иначе мультистрановые династии протекали бы в посторонние секции.
+          const countryHit = countryMatchesQuery(country) && searchFields.some((field) => field.includes(query));
+          return nameHit || countryHit;
+        });
+        matches.forEach(({ card, title, id }) => {
+          grid.appendChild(card.cloneNode(true));
+          uniqueMatches.add(id);
+          visibleLetters.add(normalizeCatalogText(title).charAt(0).toUpperCase());
+        });
+        section.hidden = matches.length === 0;
+        section.querySelector('.country-section__count').textContent = `${matches.length}`;
+        if (query) {
+          // Во время активного поиска все секции с результатами раскрыты.
+          toggle.setAttribute('aria-expanded', String(matches.length > 0));
+          content.hidden = matches.length === 0;
+        } else if (wasQueryActive) {
+          // Переход от непустого запроса к пустому: детерминированный сброс —
+          // все секции закрыты (ручное раскрытие при пустом поиске не трогаем,
+          // потому что при пустом неактивном поиске состояние не сбрасывается).
+          toggle.setAttribute('aria-expanded', 'false');
+          content.hidden = true;
+        }
+      });
+      clearSearch.hidden = !search.value;
+      if (searchStatus) searchStatus.textContent = query
+        ? (uniqueMatches.size ? `Найдено династий: ${uniqueMatches.size}` : 'Ничего не найдено. Попробуйте другое название или страну.')
+        : `Династий в каталоге: ${sourceCards.length}`;
+      // Указатель виден только при активном поиске с результатами.
+      const showAlphabet = queryActive && uniqueMatches.size > 0;
+      alphabet.hidden = !showAlphabet;
+      if (showAlphabet) rebuildAlphabet(visibleLetters);
+    }
+
+    search.addEventListener('input', renderCatalog);
+    clearSearch.addEventListener('click', () => { search.value = ''; renderCatalog(); search.focus(); });
+    renderCatalog();
+  }
+
+  setupCatalog();
+  document.addEventListener('click', (event) => {
+    const card = event.target.closest('[data-dynasty]');
+    if (card && card.closest('#dynastyCatalog')) showTree(card.dataset.dynasty, card);
   });
   backButton.addEventListener('click', () => showDynasties());
   homeButton.addEventListener('click', () => showDynasties(false));

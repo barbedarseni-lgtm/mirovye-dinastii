@@ -8,7 +8,7 @@
   <meta name="build-id" content="dynasties-2026-11-17-v63">
   <title>Мировые династии правления</title>
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./src/styles.css?v=56">
+  <link rel="stylesheet" href="./src/styles.css?v=67">
   <script>
     try {
       if (localStorage.getItem('dynasties-theme') === 'dark') {
@@ -77,6 +77,7 @@
   <script src="./src/norman.js?v=64" defer></script>
   <script src="./src/ottonians.js?v=64" defer></script>
   <script src="./src/hauteville.js?v=65" defer></script>
+  <script src="./src/habsburgs.js?v=68" defer></script>
   <script src="./src/nickname-sources.js?v=56" defer></script>
   <script src="./src/european-nicknames.js?v=56" defer></script>
   <script src="./src/piast-nicknames.js?v=56" defer></script>
@@ -121,8 +122,9 @@
   <script src="./src/merovingian-nicknames.js?v=64" defer></script>
   <script src="./src/ottonian-nicknames.js?v=64" defer></script>
   <script src="./src/hauteville-nicknames.js?v=65" defer></script>
+  <script src="./src/habsburg-nicknames.js?v=68" defer></script>
   <script src="./src/remaining-nicknames.js?v=63" defer></script>
-  <script src="./src/app.js?v=56" defer></script>
+  <script src="./src/app.js?v=68" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -148,8 +150,8 @@
           <p class="hero__lead">Проследите смену поколений и познакомьтесь с людьми, чьи решения меняли историю. Сорок три династических древа — с историческими изображениями, биографиями и источниками прозвищ.</p>
         </div>
         <dl class="hero__stats" aria-label="Краткая статистика">
-          <div><dt>Династии</dt><dd>65</dd></div>
-          <div><dt>Фигур в древах</dt><dd>865</dd></div>
+          <div><dt>Династии</dt><dd>66</dd></div>
+          <div><dt>Фигур в древах</dt><dd>898</dd></div>
           <div><dt>Охват</dt><dd>X–XX вв.</dd></div>
         </dl>
       </div>
@@ -162,8 +164,22 @@
         <p>Нажмите на доступную карточку, чтобы открыть семейное древо.</p>
       </div>
 
-      <div class="dynasty-grid">
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="romanovs" aria-label="Открыть родословное древо Романовых">
+       <div class="catalog-tools" aria-label="Поиск и навигация по каталогу">
+         <label class="catalog-search" for="dynastySearch">
+           <span class="catalog-search__label">Поиск по династиям и странам</span>
+           <span class="catalog-search__field">
+             <svg aria-hidden="true" viewBox="0 0 24 24" width="19" height="19"><circle cx="10.8" cy="10.8" r="6.8" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+             <input id="dynastySearch" type="search" autocomplete="off" spellcheck="false" placeholder="Например: Романовы, Китай или ё → е" aria-describedby="catalogSearchStatus">
+             <button id="clearDynastySearch" class="catalog-search__clear" type="button" aria-label="Очистить поиск" hidden>×</button>
+           </span>
+         </label>
+         <p id="catalogSearchStatus" class="catalog-search__status" aria-live="polite"></p>
+         <nav class="alphabet-index" id="alphabetIndex" aria-label="Алфавитный указатель династий" hidden></nav>
+       </div>
+
+       <div class="dynasty-grid" id="dynastyCatalog">
+
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="romanovs" data-countries="Россия" aria-label="Открыть родословное древо Романовых">
           <span class="dynasty-card__watermark" aria-hidden="true">Р</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Романовы</span>
@@ -172,7 +188,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="rurikovichs" aria-label="Открыть родословное древо Рюриковичей">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="rurikovichs" data-countries="Россия" aria-label="Открыть родословное древо Рюриковичей">
           <span class="dynasty-card__watermark" aria-hidden="true">Рю</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Рюриковичи</span>
@@ -181,7 +197,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="capetians" aria-label="Открыть родословное древо Капетингов">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="capetians" data-countries="Франция" aria-label="Открыть родословное древо Капетингов">
           <span class="dynasty-card__watermark" aria-hidden="true">К</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Капетинги</span>
@@ -190,7 +206,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="plantagenets" aria-label="Открыть родословное древо Плантагенетов">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="plantagenets" data-countries="Великобритания" aria-label="Открыть родословное древо Плантагенетов">
           <span class="dynasty-card__watermark" aria-hidden="true">П</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Плантагенеты</span>
@@ -199,7 +215,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="piasts" aria-label="Открыть родословное древо Пястов">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="piasts" data-countries="Польша" aria-label="Открыть родословное древо Пястов">
           <span class="dynasty-card__watermark" aria-hidden="true">Пя</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Пясты</span>
@@ -208,7 +224,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="hohenstaufens" aria-label="Открыть родословное древо Штауфенов">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="hohenstaufens" data-countries="Германия" aria-label="Открыть родословное древо Штауфенов">
           <span class="dynasty-card__watermark" aria-hidden="true">Ш</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Штауфены</span>
@@ -217,7 +233,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="carolingians" aria-label="Открыть родословное древо Каролингов">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="carolingians" data-countries="Франция · Германия" aria-label="Открыть родословное древо Каролингов">
           <span class="dynasty-card__watermark" aria-hidden="true">К</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Каролинги</span>
@@ -226,7 +242,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="palaiologoi" aria-label="Открыть родословное древо Палеологов">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="palaiologoi" data-countries="Турция · Греция" aria-label="Открыть родословное древо Палеологов">
           <span class="dynasty-card__watermark" aria-hidden="true">Па</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Палеологи</span>
@@ -235,7 +251,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="wessex" aria-label="Открыть родословное древо Уэссекского дома">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="wessex" data-countries="Великобритания" aria-label="Открыть родословное древо Уэссекского дома">
           <span class="dynasty-card__watermark" aria-hidden="true">У</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Уэссекская</span>
@@ -244,7 +260,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="knytlinga" aria-label="Открыть родословное древо Кнютлингов">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="knytlinga" data-countries="Великобритания · Дания" aria-label="Открыть родословное древо Кнютлингов">
           <span class="dynasty-card__watermark" aria-hidden="true">Кн</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Кнютлинги</span>
@@ -253,7 +269,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="tudors" aria-label="Открыть родословное древо Тюдоров">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="tudors" data-countries="Великобритания" aria-label="Открыть родословное древо Тюдоров">
           <span class="dynasty-card__watermark" aria-hidden="true">Т</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Тюдоры</span>
@@ -262,7 +278,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="stuarts" aria-label="Открыть родословное древо Стюартов">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="stuarts" data-countries="Великобритания" aria-label="Открыть родословное древо Стюартов">
           <span class="dynasty-card__watermark" aria-hidden="true">С</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Стюарты</span>
@@ -271,7 +287,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="windsors" aria-label="Открыть родословное древо Виндзоров">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="windsors" data-countries="Великобритания" aria-label="Открыть родословное древо Виндзоров">
           <span class="dynasty-card__watermark" aria-hidden="true">В</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Виндзоры</span>
@@ -280,7 +296,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="hanovers" aria-label="Открыть родословное древо Ганноверской династии">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="hanovers" data-countries="Великобритания" aria-label="Открыть родословное древо Ганноверской династии">
           <span class="dynasty-card__watermark" aria-hidden="true">Г</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Ганноверская</span>
@@ -289,7 +305,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="bourbons" aria-label="Открыть родословное древо Бурбонов">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="bourbons" data-countries="Франция" aria-label="Открыть родословное древо Бурбонов">
           <span class="dynasty-card__watermark" aria-hidden="true">Б</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Бурбоны</span>
@@ -298,7 +314,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="bonapartes" aria-label="Открыть родословное древо Бонапартов">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="bonapartes" data-countries="Франция" aria-label="Открыть родословное древо Бонапартов">
           <span class="dynasty-card__watermark" aria-hidden="true">Бо</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Бонапарты</span>
@@ -307,7 +323,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="hohenzollerns" aria-label="Открыть родословное древо Гогенцоллернов">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="hohenzollerns" data-countries="Германия" aria-label="Открыть родословное древо Гогенцоллернов">
           <span class="dynasty-card__watermark" aria-hidden="true">Го</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Гогенцоллерны</span>
@@ -316,7 +332,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="orangeNassau" aria-label="Открыть родословное древо Оранско-Нассауской династии">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="orangeNassau" data-countries="Нидерланды" aria-label="Открыть родословное древо Оранско-Нассауской династии">
           <span class="dynasty-card__watermark" aria-hidden="true">О</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Оранско-Нассауская</span>
@@ -325,7 +341,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="bernadottes" aria-label="Открыть родословное древо Бернадотов">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="bernadottes" data-countries="Швеция" aria-label="Открыть родословное древо Бернадотов">
           <span class="dynasty-card__watermark" aria-hidden="true">Бе</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Бернадоты</span>
@@ -334,7 +350,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="oldenburg" aria-label="Открыть родословное древо Ольденбургской династии">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="oldenburg" data-countries="Дания" aria-label="Открыть родословное древо Ольденбургской династии">
           <span class="dynasty-card__watermark" aria-hidden="true">Ол</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Ольденбургская</span>
@@ -343,7 +359,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="glucksburgs" aria-label="Открыть родословное древо Глюксбургов">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="glucksburgs" data-countries="Дания" aria-label="Открыть родословное древо Глюксбургов">
           <span class="dynasty-card__watermark" aria-hidden="true">Гл</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Глюксбурги</span>
@@ -352,7 +368,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="savoy" aria-label="Открыть родословное древо Савойской династии">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="savoy" data-countries="Италия" aria-label="Открыть родословное древо Савойской династии">
           <span class="dynasty-card__watermark" aria-hidden="true">Са</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Савойская</span>
@@ -361,7 +377,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="vasa" aria-label="Открыть родословное древо Ваза">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="vasa" data-countries="Швеция" aria-label="Открыть родословное древо Ваза">
           <span class="dynasty-card__watermark" aria-hidden="true">Ва</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Ваза</span>
@@ -370,7 +386,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="jagiellons" aria-label="Открыть родословное древо Ягеллонов">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="jagiellons" data-countries="Польша · Литва" aria-label="Открыть родословное древо Ягеллонов">
           <span class="dynasty-card__watermark" aria-hidden="true">Я</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Ягеллоны</span>
@@ -379,7 +395,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="premyslids" aria-label="Открыть родословное древо Пржемысловичей">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="premyslids" data-countries="Чехия" aria-label="Открыть родословное древо Пржемысловичей">
           <span class="dynasty-card__watermark" aria-hidden="true">Пр</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Пржемысловичи</span>
@@ -388,7 +404,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="arpads" aria-label="Открыть родословное древо Арпадов">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="arpads" data-countries="Венгрия" aria-label="Открыть родословное древо Арпадов">
           <span class="dynasty-card__watermark" aria-hidden="true">А</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Арпады</span>
@@ -397,7 +413,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="bagrationi" aria-label="Открыть родословное древо Багратиони">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="bagrationi" data-countries="Грузия" aria-label="Открыть родословное древо Багратиони">
           <span class="dynasty-card__watermark" aria-hidden="true">Ба</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Багратиони</span>
@@ -406,7 +422,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="nemanjic" aria-label="Открыть родословное древо Неманичей">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="nemanjic" data-countries="Сербия" aria-label="Открыть родословное древо Неманичей">
           <span class="dynasty-card__watermark" aria-hidden="true">Н</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Неманичи</span>
@@ -415,7 +431,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="luxembourgs" aria-label="Открыть родословное древо Люксембургов">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="luxembourgs" data-countries="Чехия · Германия" aria-label="Открыть родословное древо Люксембургов">
           <span class="dynasty-card__watermark" aria-hidden="true">Л</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Люксембурги</span>
@@ -424,7 +440,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="isaurians" aria-label="Открыть родословное древо Исаврийской династии">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="isaurians" data-countries="Турция" aria-label="Открыть родословное древо Исаврийской династии">
           <span class="dynasty-card__watermark" aria-hidden="true">И</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Исаврийская</span>
@@ -433,7 +449,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="justinians" aria-label="Открыть родословное древо Юстиниановой династии">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="justinians" data-countries="Турция" aria-label="Открыть родословное древо Юстиниановой династии">
           <span class="dynasty-card__watermark" aria-hidden="true">Ю</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Юстинианова</span>
@@ -442,7 +458,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="macedonians" aria-label="Открыть родословное древо Македонской династии">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="macedonians" data-countries="Турция · Греция" aria-label="Открыть родословное древо Македонской династии">
           <span class="dynasty-card__watermark" aria-hidden="true">Ма</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Македонская</span>
@@ -451,7 +467,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="komnenos" aria-label="Открыть родословное древо Комнинов">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="komnenos" data-countries="Турция · Греция" aria-label="Открыть родословное древо Комнинов">
           <span class="dynasty-card__watermark" aria-hidden="true">Ко</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Комнины</span>
@@ -460,7 +476,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="angeloi" aria-label="Открыть родословное древо Ангелов">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="angeloi" data-countries="Турция · Греция" aria-label="Открыть родословное древо Ангелов">
           <span class="dynasty-card__watermark" aria-hidden="true">Ан</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Ангелы</span>
@@ -469,7 +485,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="laskarids" aria-label="Открыть родословное древо Ласкаридов">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="laskarids" data-countries="Турция" aria-label="Открыть родословное древо Ласкаридов">
           <span class="dynasty-card__watermark" aria-hidden="true">Ла</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Ласкариды</span>
@@ -478,7 +494,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="ptolemies" aria-label="Открыть родословное древо Птолемеев">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="ptolemies" data-countries="Египет" aria-label="Открыть родословное древо Птолемеев">
           <span class="dynasty-card__watermark" aria-hidden="true">Пт</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Птолемеи</span>
@@ -487,7 +503,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="seleucids" aria-label="Открыть родословное древо Селевкидов">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="seleucids" data-countries="Сирия · Ирак" aria-label="Открыть родословное древо Селевкидов">
           <span class="dynasty-card__watermark" aria-hidden="true">Се</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Селевкиды</span>
@@ -496,7 +512,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="argeads" aria-label="Открыть родословное древо Аргеадов">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="argeads" data-countries="Греция · Северная Македония" aria-label="Открыть родословное древо Аргеадов">
           <span class="dynasty-card__watermark" aria-hidden="true">Ар</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Аргеады</span>
@@ -505,7 +521,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="antigonids" aria-label="Открыть родословное древо Антигонидов">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="antigonids" data-countries="Греция · Северная Македония" aria-label="Открыть родословное древо Антигонидов">
           <span class="dynasty-card__watermark" aria-hidden="true">Ант</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Антигониды</span>
@@ -514,7 +530,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="achaemenids" aria-label="Открыть родословное древо Ахеменидов">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="achaemenids" data-countries="Иран" aria-label="Открыть родословное древо Ахеменидов">
           <span class="dynasty-card__watermark" aria-hidden="true">Ах</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Ахемениды</span>
@@ -523,7 +539,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="sassanids" aria-label="Открыть родословное древо Сасанидов">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="sassanids" data-countries="Иран" aria-label="Открыть родословное древо Сасанидов">
           <span class="dynasty-card__watermark" aria-hidden="true">Сас</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Сасаниды</span>
@@ -532,7 +548,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="arsacids" aria-label="Открыть родословное древо Арсакидов">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="arsacids" data-countries="Иран" aria-label="Открыть родословное древо Арсакидов">
           <span class="dynasty-card__watermark" aria-hidden="true">Арс</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Арсакиды</span>
@@ -541,7 +557,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="safavids" aria-label="Открыть родословное древо Сефевидов">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="safavids" data-countries="Иран" aria-label="Открыть родословное древо Сефевидов">
           <span class="dynasty-card__watermark" aria-hidden="true">Сеф</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Сефевиды</span>
@@ -550,7 +566,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="qajars" aria-label="Открыть родословное древо Каджаров">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="qajars" data-countries="Иран" aria-label="Открыть родословное древо Каджаров">
           <span class="dynasty-card__watermark" aria-hidden="true">Ка</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Каджары</span>
@@ -559,7 +575,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="afsharids" aria-label="Открыть родословное древо Афшаридов">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="afsharids" data-countries="Иран" aria-label="Открыть родословное древо Афшаридов">
           <span class="dynasty-card__watermark" aria-hidden="true">Аф</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Афшариды</span>
@@ -568,7 +584,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="zands" aria-label="Открыть родословное древо Зандов">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="zands" data-countries="Иран" aria-label="Открыть родословное древо Зандов">
           <span class="dynasty-card__watermark" aria-hidden="true">З</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Занды</span>
@@ -577,7 +593,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="tang" aria-label="Открыть родословное древо династии Тан">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="tang" data-countries="Китай" aria-label="Открыть родословное древо династии Тан">
           <span class="dynasty-card__watermark" aria-hidden="true">Т</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Тан</span>
@@ -586,7 +602,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="ming" aria-label="Открыть родословное древо династии Мин">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="ming" data-countries="Китай" aria-label="Открыть родословное древо династии Мин">
           <span class="dynasty-card__watermark" aria-hidden="true">М</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Мин</span>
@@ -595,7 +611,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="qing" aria-label="Открыть родословное древо династии Цин">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="qing" data-countries="Китай" aria-label="Открыть родословное древо династии Цин">
           <span class="dynasty-card__watermark" aria-hidden="true">Ц</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Цин</span>
@@ -604,7 +620,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="han" aria-label="Открыть родословное древо династии Хань">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="han" data-countries="Китай" aria-label="Открыть родословное древо династии Хань">
           <span class="dynasty-card__watermark" aria-hidden="true">Х</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Хань</span>
@@ -613,7 +629,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="song" aria-label="Открыть родословное древо династии Сун">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="song" data-countries="Китай" aria-label="Открыть родословное древо династии Сун">
           <span class="dynasty-card__watermark" aria-hidden="true">С</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Сун</span>
@@ -622,7 +638,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="yuan" aria-label="Открыть родословное древо династии Юань">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="yuan" data-countries="Китай · Монголия" aria-label="Открыть родословное древо династии Юань">
           <span class="dynasty-card__watermark" aria-hidden="true">Ю</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Юань</span>
@@ -631,7 +647,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="yamato" aria-label="Открыть родословное древо дома Ямато">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="yamato" data-countries="Япония" aria-label="Открыть родословное древо дома Ямато">
           <span class="dynasty-card__watermark" aria-hidden="true">Я</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Ямато</span>
@@ -640,7 +656,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="joseon" aria-label="Открыть родословное древо Чосон">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="joseon" data-countries="Южная Корея" aria-label="Открыть родословное древо Чосон">
           <span class="dynasty-card__watermark" aria-hidden="true">Ч</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Чосон</span>
@@ -649,7 +665,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="umayyads" aria-label="Открыть родословное древо Омейядов">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="umayyads" data-countries="Сирия · Испания" aria-label="Открыть родословное древо Омейядов">
           <span class="dynasty-card__watermark" aria-hidden="true">Ом</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Омейяды</span>
@@ -658,7 +674,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="abbasids" aria-label="Открыть родословное древо Аббасидов">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="abbasids" data-countries="Ирак" aria-label="Открыть родословное древо Аббасидов">
           <span class="dynasty-card__watermark" aria-hidden="true">Аб</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Аббасиды</span>
@@ -667,7 +683,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="fatimids" aria-label="Открыть родословное древо Фатимидов">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="fatimids" data-countries="Египет" aria-label="Открыть родословное древо Фатимидов">
           <span class="dynasty-card__watermark" aria-hidden="true">Ф</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Фатимиды</span>
@@ -676,7 +692,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="ottomans" aria-label="Открыть родословное древо Османов">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="ottomans" data-countries="Турция" aria-label="Открыть родословное древо Османов">
           <span class="dynasty-card__watermark" aria-hidden="true">Ос</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Османы</span>
@@ -685,7 +701,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="mughals" aria-label="Открыть родословное древо Великих Моголов">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="mughals" data-countries="Индия" aria-label="Открыть родословное древо Великих Моголов">
           <span class="dynasty-card__watermark" aria-hidden="true">ВМ</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Великие Моголы</span>
@@ -694,7 +710,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="timurids" aria-label="Открыть родословное древо Тимуридов">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="timurids" data-countries="Узбекистан · Афганистан" aria-label="Открыть родословное древо Тимуридов">
           <span class="dynasty-card__watermark" aria-hidden="true">Ти</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Тимуриды</span>
@@ -703,7 +719,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="jimenez" aria-label="Открыть родословное древо династии Хименес">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="jimenez" data-countries="Испания" aria-label="Открыть родословное древо династии Хименес">
           <span class="dynasty-card__watermark" aria-hidden="true">Хи</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Хименес</span>
@@ -712,7 +728,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="merovingians" aria-label="Открыть родословное древо Меровингов">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="merovingians" data-countries="Франция" aria-label="Открыть родословное древо Меровингов">
           <span class="dynasty-card__watermark" aria-hidden="true">М</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Меровинги</span>
@@ -721,7 +737,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="norman" aria-label="Открыть родословное древо Нормандской династии">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="norman" data-countries="Великобритания · Франция" aria-label="Открыть родословное древо Нормандской династии">
           <span class="dynasty-card__watermark" aria-hidden="true">Но</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Нормандская</span>
@@ -730,7 +746,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="ottonians" aria-label="Открыть родословное древо Оттоновской династии">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="ottonians" data-countries="Германия" aria-label="Открыть родословное древо Оттоновской династии">
           <span class="dynasty-card__watermark" aria-hidden="true">От</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Оттоновская</span>
@@ -739,7 +755,7 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="hauteville" aria-label="Открыть родословное древо дома Отвилей (Готвилей)">
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="hauteville" data-countries="Италия" aria-label="Открыть родословное древо дома Отвилей (Готвилей)">
           <span class="dynasty-card__watermark" aria-hidden="true">О</span>
           <span class="dynasty-card__status">Древо доступно</span>
           <span class="dynasty-card__title">Отвили (Готвили)</span>
@@ -748,12 +764,14 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <article class="dynasty-card dynasty-card--future">
-          <span class="dynasty-card__status">Вне основной подборки</span>
-          <h3 class="dynasty-card__title">Габсбурги</h3>
-          <p class="dynasty-card__meta">1273–1918 · Европа</p>
-          <p class="dynasty-card__description">Правление началось в XIII веке, но продолжилось до XX. Древо в текущую средневековую подборку не включено.</p>
-        </article>
+        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="habsburgs" data-countries="Австрия · Испания · Германия · Чехия · Венгрия" aria-label="Открыть родословное древо Габсбургов">
+          <span class="dynasty-card__watermark" aria-hidden="true">Г</span>
+          <span class="dynasty-card__status">Древо доступно</span>
+          <span class="dynasty-card__title">Габсбурги</span>
+          <span class="dynasty-card__meta">1273–1918 · Австрия · Испания · Священная Римская империя</span>
+          <span class="dynasty-card__description">Австрийская и испанская ветви дома — от Рудольфа I до Карла I, последнего императора Австро-Венгрии.</span>
+          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+        </button>
       </div>
     </section>
 

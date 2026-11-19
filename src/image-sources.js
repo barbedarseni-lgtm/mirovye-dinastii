@@ -3860,5 +3860,200 @@ window.DYNASTY_IMAGE_SOURCES = {
     "source": "https://commons.wikimedia.org/wiki/File:Constance%27s_sarcophagus_in_Palermo_Cathedral.jpg",
     "license": "Public domain",
     "artist": "Sibeaster"
+  },
+  "hab_rudolf_i": {
+    "source": "https://commons.wikimedia.org/wiki/File:Kaiser_Rudolf_I._1275.jpg",
+    "license": "Public domain",
+    "artist": "Wolfgang Sauber"
+  },
+  "hab_albert_i": {
+    "source": "https://commons.wikimedia.org/wiki/File:Albert_I_of_Germany.jpg",
+    "license": "Public domain",
+    "artist": "No machine-readable author provided. Gilgamesh assumed (based on copyright claims)."
+  },
+  "hab_albert_ii_duke": {
+    "source": "https://commons.wikimedia.org/wiki/File:Albert_II,_Duke_of_Austria.jpg",
+    "license": "Public domain",
+    "artist": "Unknown authorUnknown author"
+  },
+  "hab_rudolf_iv": {
+    "source": "https://commons.wikimedia.org/wiki/File:First_Equestrian_Seal_of_Rudolf_IV,_Duke_of_Austria_(recto).png",
+    "license": "Public domain",
+    "artist": "Unknown"
+  },
+  "hab_albert_iii": {
+    "source": "https://commons.wikimedia.org/wiki/File:Albert_III,_Duke_of_Austria_04.jpg",
+    "license": "CC0",
+    "artist": "Wilfredor"
+  },
+  "hab_albert_v": {
+    "source": "https://commons.wikimedia.org/wiki/File:Albrecht_II_as_Roman-German_king.jpg",
+    "license": "Public domain",
+    "artist": "Anton Boys"
+  },
+  "hab_ladislas": {
+    "source": "https://commons.wikimedia.org/wiki/File:Anonymous_-_Ladislaus_the_Postumous.jpg",
+    "license": "Public domain",
+    "artist": "AnonymousUnknown author, Austria 15th centurydate QS:P,+1450-00-00T00:00:00Z/7"
+  },
+  "hab_frederick_iii": {
+    "source": "https://commons.wikimedia.org/wiki/File:Portr%C3%A4t_von_Kaiser_Frederick_III._von_Habsburg.png",
+    "license": "Public domain",
+    "artist": "Josef Ferdinand Fromiller"
+  },
+  "hab_maximilian_i": {
+    "source": "https://commons.wikimedia.org/wiki/File:Albrecht_D%C3%BCrer_-_Portrait_of_Maximilian_I_-_Google_Art_Project.jpg",
+    "license": "Public domain",
+    "artist": "Albrecht Dürer"
+  },
+  "hab_philip_i": {
+    "source": "https://commons.wikimedia.org/wiki/File:Philip_the_Handsome_taking_Arnhem,_1505.jpg",
+    "license": "Public domain",
+    "artist": "Charles Rochussen"
+  },
+  "hab_charles_v": {
+    "source": "https://commons.wikimedia.org/wiki/File:Charles_V,_Holy_Roman_Emperor_-_Titian.jpg",
+    "license": "CC BY 4.0",
+    "artist": "GoldenArtists"
+  },
+  "hab_ferdinand_i": {
+    "source": "https://commons.wikimedia.org/wiki/File:Bemberg_Fondation_Toulouse_-_Portrait_paintings_of_Ferdinand_I,_Holy_Roman_Emperor_by_Jan_Cornelisz_Vermeyen_Inv.1056.jpg",
+    "license": "Public domain",
+    "artist": "Didier Descouens"
+  },
+  "hab_philip_ii": {
+    "source": "https://commons.wikimedia.org/wiki/File:Portrait_of_Philip_II_of_Spain_by_Sofonisba_Anguissola_-_002b.jpg",
+    "license": "Public domain",
+    "artist": "Sofonisba Anguissola"
+  },
+  "hab_maximilian_ii": {
+    "source": "https://commons.wikimedia.org/wiki/File:Maximilian_II_Holy_Roman_Emperor.png",
+    "license": "Public domain",
+    "artist": "Nicolas Neufchatel"
+  },
+  "hab_philip_iii": {
+    "source": "https://commons.wikimedia.org/wiki/File:Philipp_III_Spanien_MATEO.jpg",
+    "license": "Public domain",
+    "artist": "Dominicus Custos"
+  },
+  "hab_rudolf_ii": {
+    "source": "https://commons.wikimedia.org/wiki/File:Portret_van_Rudolf_II_van_Habsburg,_Duits_keizer,_RP-P-1908-1233.jpg",
+    "license": "CC0",
+    "artist": "Rijksmuseum"
+  },
+  "hab_mattias": {
+    "source": "https://commons.wikimedia.org/wiki/File:Matthias_-_Holy_Roman_Emperor_(Hans_von_Aachen,_1625).jpg",
+    "license": "Public domain",
+    "artist": "Circle of Hans von Aachen"
+  },
+  "hab_philip_iv": {
+    "source": "https://commons.wikimedia.org/wiki/File:(Castre)_Philip_IV_as_a_Hunter_-_Velazquez_-_Mus%C3%A9e_Goya.jpg",
+    "license": "Public domain",
+    "artist": "Didier Descouens"
+  },
+  "hab_ferdinand_ii": {
+    "source": "https://commons.wikimedia.org/wiki/File:Kaiser_Ferdinand_II._1614.jpg",
+    "license": "Public domain",
+    "artist": "Unidentified painter"
+  },
+  "hab_charles_ii": {
+    "source": "https://commons.wikimedia.org/wiki/File:King_Charles_II_by_John_Michael_Wright_or_studio.jpg",
+    "license": "Public domain",
+    "artist": "John Michael Wright"
+  },
+  "hab_ferdinand_iii": {
+    "source": "https://commons.wikimedia.org/wiki/File:Ferdinand_III,_Holy_Roman_Emperor.jpg",
+    "license": "Public domain",
+    "artist": "Jan van den Hoecke"
+  },
+  "hab_leopold_i": {
+    "source": "https://commons.wikimedia.org/wiki/File:(Venice)_Palazzo_Mocenigo_-_Portego_-_Portrait_of_Emperor_Leopold_I_of_Habsburg.jpg",
+    "license": "Public domain",
+    "artist": "Didier Descouens"
+  },
+  "hab_joseph_i": {
+    "source": "https://commons.wikimedia.org/wiki/File:Joseph_I,_Holy_Roman_Emperor.jpg",
+    "license": "Public domain",
+    "artist": "Unidentified painter"
+  },
+  "hab_charles_vi": {
+    "source": "https://commons.wikimedia.org/wiki/File:Pieter_van_Bloemen_-_Equestrian_portrait_of_Charles_VI,_Holy_Roman_Emperor.jpg",
+    "license": "Public domain",
+    "artist": "Pieter van Bloemen"
+  },
+  "hab_maria_theresa": {
+    "source": "https://commons.wikimedia.org/wiki/File:Workshop_of_Martin_van_Meytens_-_%22Portrait_of_Empress_Maria_Theresa_of_Habsburg%22.jpg",
+    "license": "Public domain",
+    "artist": "Workshop of Martin van Meytens"
+  },
+  "hab_joseph_ii": {
+    "source": "https://commons.wikimedia.org/wiki/File:Portrait_of_Joseph_II,_Emperor_of_the_Holy_Roman_Empire_MET_DP278963.jpg",
+    "license": "CC0",
+    "artist": "Savonnerie manufactory"
+  },
+  "hab_leopold_ii": {
+    "source": "https://commons.wikimedia.org/wiki/File:So-called_portrait_of_Holy_Roman_Emperor_Leopold_II.jpg",
+    "license": "Public domain",
+    "artist": "Unidentified painter"
+  },
+  "hab_francis_ii": {
+    "source": "https://commons.wikimedia.org/wiki/File:Francis_II_%26_I,_Holy_Roman_Emperor.jpg",
+    "license": "Public domain",
+    "artist": "Anton Dietrich"
+  },
+  "hab_ferdinand_i_austria": {
+    "source": "https://commons.wikimedia.org/wiki/File:V._Ferdin%C3%A1nd.jpg",
+    "license": "Public domain",
+    "artist": "Unidentified painter"
+  },
+  "hab_franz_joseph_father": {
+    "source": "https://commons.wikimedia.org/wiki/File:Erherzog_Franz_Karl_von_%C3%96sterreich_(1802-1878).png",
+    "license": "Public domain",
+    "artist": "Josef Kriehuber"
+  },
+  "hab_franz_joseph": {
+    "source": "https://commons.wikimedia.org/wiki/File:Portrait_of_Franz_Joseph_I_by_Franz_Xaver_Winterhalter.jpg",
+    "license": "Public domain",
+    "artist": "Franz Xaver Winterhalter"
+  },
+  "hab_otto_franz_joseph": {
+    "source": "https://commons.wikimedia.org/wiki/File:Otto_Franz_Austria_1865_1906_01.jpg",
+    "license": "Public domain",
+    "artist": "См. источник изображения"
+  },
+  "hab_charles_i": {
+    "source": "https://commons.wikimedia.org/wiki/File:Emperor_karl_of_austria-hungary_1917.png",
+    "license": "Public domain",
+    "artist": "Wenzl Weis"
+  },
+  "hab_leopold_iii": {
+    "source": "https://commons.wikimedia.org/wiki/File:Portrait_of_Leopold_III_of_Habsburg.png",
+    "license": "Public domain",
+    "artist": "Josef Ferdinand Fromiller"
+  },
+  "hab_ernst_iron": {
+    "source": "https://commons.wikimedia.org/wiki/File:Duke_Ernest_the_Iron.jpg",
+    "license": "Public domain",
+    "artist": "Anton Boys"
+  },
+  "hab_albert_iv": {
+    "source": "https://commons.wikimedia.org/wiki/File:Albrecht_Vierte_Habsburg.jpg",
+    "license": "Public domain",
+    "artist": "Unknown authorUnknown author"
+  },
+  "hab_daughter_maria": {
+    "source": "https://commons.wikimedia.org/wiki/File:Georg_Hoefnagel_-_Maria_of_Austria,_Holy_Roman_Empress.jpg",
+    "license": "Public domain",
+    "artist": "Joris Hoefnagel"
+  },
+  "hab_charles_ii_styria": {
+    "source": "https://commons.wikimedia.org/wiki/File:Charles_II,_Archduke_of_Austria_by_Bacciarelli.png",
+    "license": "Public domain",
+    "artist": "Marcello Bacciarelli"
+  },
+  "hab_maximilian_mexico": {
+    "source": "https://commons.wikimedia.org/wiki/File:Emperador_Maximiliano_I_de_Mexico.jpg",
+    "license": "Public domain",
+    "artist": "Albert Graefle"
   }
 };

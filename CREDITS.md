@@ -130,3 +130,41 @@
 | Конрадин | Поздний портрет | Неизвестный автор | Общественное достояние | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Konradin.jpg) |
 | Манфред | Миниатюра из трактата «Об искусстве охоты с птицами», 1258–1266 годы | Неизвестный автор | Общественное достояние | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Manfred_Sizilien_Manfredi_Sicilia_De_Arte_Venandi_cum_Avibus_-_dated_MSS_1258-1266.png) |
 | Констанция II | Миниатюра из «Генеалогии королей Португалии», XVI век | Неизвестный автор | Общественное достояние | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:D._Constan%C3%A7a_de_Hohenstaufen,_Rainha_de_Arag%C3%A3o_-_The_Portuguese_Genealogy_(Genealogia_dos_Reis_de_Portugal).png) |
+
+## Габсбурги
+
+| Персона | Тип изображения | Автор / создатель | Лицензия | Источник |
+| --- | --- | --- | --- | --- |
+| Рудольф I | Исторический портрет | Wolfgang Sauber | Public domain | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Kaiser_Rudolf_I._1275.jpg) |
+| Альбрехт I | Исторический портрет | No machine-readable author provided. Gilgamesh assumed (based on copyright claims). | Public domain | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Albert_I_of_Germany.jpg) |
+| Альбрехт II | Исторический портрет | Unknown authorUnknown author | Public domain | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Albert_II,_Duke_of_Austria.jpg) |
+| Рудольф IV | Исторический портрет | Unknown | Public domain | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:First_Equestrian_Seal_of_Rudolf_IV,_Duke_of_Austria_(recto).png) |
+| Альбрехт III | Исторический портрет | Wilfredor | CC0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Albert_III,_Duke_of_Austria_04.jpg) |
+| Альбрехт V | Исторический портрет | Anton Boys | Public domain | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Albrecht_II_as_Roman-German_king.jpg) |
+| Ладислав Постум | Исторический портрет | AnonymousUnknown author, Austria 15th centurydate QS:P,+1450-00-00T00:00:00Z/7 | Public domain | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Anonymous_-_Ladislaus_the_Postumous.jpg) |
+| Фридрих III | Исторический портрет | Josef Ferdinand Fromiller | Public domain | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Portr%C3%A4t_von_Kaiser_Frederick_III._von_Habsburg.png) |
+| Максимилиан I | Исторический портрет | Albrecht Dürer | Public domain | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Albrecht_D%C3%BCrer_-_Portrait_of_Maximilian_I_-_Google_Art_Project.jpg) |
+| Филипп I | Исторический портрет | Charles Rochussen | Public domain | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Philip_the_Handsome_taking_Arnhem,_1505.jpg) |
+| Карл V | Исторический портрет | GoldenArtists | CC BY 4.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Charles_V,_Holy_Roman_Emperor_-_Titian.jpg) |
+| Фердинанд I | Исторический портрет | Didier Descouens | Public domain | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Bemberg_Fondation_Toulouse_-_Portrait_paintings_of_Ferdinand_I,_Holy_Roman_Emperor_by_Jan_Cornelisz_Vermeyen_Inv.1056.jpg) |
+| Филипп II | Исторический портрет | Sofonisba Anguissola | Public domain | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Portrait_of_Philip_II_of_Spain_by_Sofonisba_Anguissola_-_002b.jpg) |
+| Максимилиан II | Исторический портрет | Nicolas Neufchatel | Public domain | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Maximilian_II_Holy_Roman_Emperor.png) |
+| Филипп III | Исторический портрет | Dominicus Custos | Public domain | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Philipp_III_Spanien_MATEO.jpg) |
+| Рудольф II | Исторический портрет | Rijksmuseum | CC0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Portret_van_Rudolf_II_van_Habsburg,_Duits_keizer,_RP-P-1908-1233.jpg) |
+| Маттиас | Исторический портрет | Circle of Hans von Aachen | Public domain | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Matthias_-_Holy_Roman_Emperor_(Hans_von_Aachen,_1625).jpg) |
+| Филипп IV | Исторический портрет | Didier Descouens | Public domain | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:(Castre)_Philip_IV_as_a_Hunter_-_Velazquez_-_Mus%C3%A9e_Goya.jpg) |
+| Фердинанд II | Исторический портрет | Unidentified painter | Public domain | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Kaiser_Ferdinand_II._1614.jpg) |
+| Карл II | Исторический портрет | John Michael Wright | Public domain | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:King_Charles_II_by_John_Michael_Wright_or_studio.jpg) |
+| Фердинанд III | Исторический портрет | Jan van den Hoecke | Public domain | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Ferdinand_III,_Holy_Roman_Emperor.jpg) |
+| Леопольд I | Исторический портрет | Didier Descouens | Public domain | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:(Venice)_Palazzo_Mocenigo_-_Portego_-_Portrait_of_Emperor_Leopold_I_of_Habsburg.jpg) |
+| Иосиф I | Исторический портрет | Unidentified painter | Public domain | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Joseph_I,_Holy_Roman_Emperor.jpg) |
+| Карл VI | Исторический портрет | Pieter van Bloemen | Public domain | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Pieter_van_Bloemen_-_Equestrian_portrait_of_Charles_VI,_Holy_Roman_Emperor.jpg) |
+| Мария Терезия | Исторический портрет | Workshop of Martin van Meytens | Public domain | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Workshop_of_Martin_van_Meytens_-_%22Portrait_of_Empress_Maria_Theresa_of_Habsburg%22.jpg) |
+| Иосиф II | Исторический портрет | Savonnerie manufactory | CC0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Portrait_of_Joseph_II,_Emperor_of_the_Holy_Roman_Empire_MET_DP278963.jpg) |
+| Леопольд II | Исторический портрет | Unidentified painter | Public domain | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:So-called_portrait_of_Holy_Roman_Emperor_Leopold_II.jpg) |
+| Франц II | Исторический портрет | Anton Dietrich | Public domain | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Francis_II_%26_I,_Holy_Roman_Emperor.jpg) |
+| Фердинанд I | Исторический портрет | Unidentified painter | Public domain | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:V._Ferdin%C3%A1nd.jpg) |
+| Франц Иосиф I | Исторический портрет | Franz Xaver Winterhalter | Public domain | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Portrait_of_Franz_Joseph_I_by_Franz_Xaver_Winterhalter.jpg) |
+| Франц Карл | Исторический портрет | Josef Kriehuber | Public domain | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Erherzog_Franz_Karl_von_%C3%96sterreich_(1802-1878).png) |
+| Карл I | Исторический портрет | Wenzl Weis | Public domain | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Emperor_karl_of_austria-hungary_1917.png) |
+| Отто Франц Иосиф | Исторический портрет | См. источник изображения | Public domain | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Otto_Franz_Austria_1865_1906_01.jpg) |
