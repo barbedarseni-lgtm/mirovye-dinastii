@@ -272,7 +272,14 @@
   }
 
   function normalizeCatalogText(value) {
-    return String(value || '').toLocaleLowerCase('ru').replaceAll('ё', 'е').normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    // NBSP и другие юникод-пробелы приводим к обычному пробелу, ё → е,
+    // диакритика снимается, регистр — нижний.
+    return String(value || '')
+      .replace(/\s/g, ' ')
+      .toLocaleLowerCase('ru')
+      .replaceAll('ё', 'е')
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '');
   }
 
   function setupCatalog() {
@@ -425,23 +432,62 @@
       const MAX_PERSON_RESULTS = 8;
       const personCollator = new Intl.Collator('ru', { sensitivity: 'base' });
 
+      // «Николай 2» → «николай ii»: в данных порядковые — римскими цифрами,
+      // а нормализованный текст всегда в нижнем регистре.
+      function arabicToRoman(value) {
+        return value.replace(/\d+/g, (digits) => {
+          const n = Number(digits);
+          if (!Number.isInteger(n) || n < 1 || n > 3999) return digits;
+          const thousands = Math.floor(n / 1000);
+          const hundreds = Math.floor((n % 1000) / 100);
+          const tens = Math.floor((n % 100) / 10);
+          const ones = n % 10;
+          return ('m'.repeat(thousands) + ['', 'c', 'cc', 'ccc', 'cd', 'd', 'dc', 'dcc', 'dccc', 'cm'][hundreds]
+            + ['', 'x', 'xx', 'xxx', 'xl', 'l', 'lx', 'lxx', 'lxxx', 'xc'][tens]
+            + ['', 'i', 'ii', 'iii', 'iv', 'v', 'vi', 'vii', 'viii', 'ix'][ones]);
+        });
+      }
+
       // Ранг релевантности совпадения (чем меньше, тем выше):
       // 1 — точное совпадение полного имени или прозвища;
       // 2 — имя/прозвище начинается с запроса;
       // 3 — начало отдельного слова (имя, фамилия, римская цифра);
       // 4 — совпадение внутри слова (только для запросов длиной 3+ букв).
+      // Многословный запрос («иван грозный», «николай 2») разбивается на слова:
+      // каждое слово должно совпасть с одним из полей (имя или прозвище),
+      // ранг — лучший из частичных рангов. Однословный работает как раньше.
+      function fieldWordRank(field, word) {
+        if (field === word) return 1;
+        if (field.startsWith(word)) return 2;
+        if (field.split(/\s+/).some((part) => part.startsWith(word))) return 3;
+        if (word.length >= 3 && field.includes(word)) return 4;
+        return null;
+      }
+
       function personMatchRank(person, nickname, q) {
         const nameNorm = normalizeCatalogText(person.name);
         const nickNorm = nickname ? normalizeCatalogText(nickname) : '';
+        const fields = nickNorm ? [nameNorm, nickNorm] : [nameNorm];
 
+        const queryWords = arabicToRoman(q).split(/\s+/).filter(Boolean);
+        if (queryWords.length > 1) {
+          const bestRanks = queryWords.map((word) => {
+            const fieldRanks = fields.map((field) => fieldWordRank(field, word)).filter((rank) => rank != null);
+            return fieldRanks.length ? Math.min(...fieldRanks) : null;
+          });
+          if (bestRanks.every((rank) => rank != null)) return Math.min(...bestRanks);
+          return null;
+        }
+
+        const word = queryWords[0] || q;
         if (nameNorm === q || nickNorm === q) return 1;
         if (nameNorm.startsWith(q) || nickNorm.startsWith(q)) return 2;
 
         const nameWords = nameNorm.split(/\s+/);
-        if (nameWords.some((word) => word.startsWith(q))) return 3;
-        if (nickNorm && nickNorm.split(/\s+/).some((word) => word.startsWith(q))) return 3;
+        if (nameWords.some((w) => w.startsWith(word))) return 3;
+        if (nickNorm && nickNorm.split(/\s+/).some((w) => w.startsWith(word))) return 3;
 
-        if (q.length >= 3 && (nameNorm.includes(q) || nickNorm.includes(q))) return 4;
+        if (word.length >= 3 && (nameNorm.includes(word) || nickNorm.includes(word))) return 4;
         return null;
       }
 
@@ -457,13 +503,20 @@
 
         // Собираем все совпадения с рейтингом
         const matches = [];
+        const seenPersons = new Set();
         for (const dynasty of Object.values(window.DYNASTIES)) {
           for (const person of dynasty.members) {
+            // Дубликат — это одно и то же лицо в нескольких династиях
+            // (или двойная вставка человека в древо). В пределах одной династии
+            // полные тёзки с разными прозвищами остаются отдельными строками.
+            const personKey = `${person.id}·${dynasty.id}`;
+            if (seenPersons.has(personKey)) continue;
+            seenPersons.add(personKey);
             const nameNorm = normalizeCatalogText(person.name);
             const nicknameNorm = person.nickname ? normalizeCatalogText(person.nickname) : '';
             const rank = personMatchRank(person, person.nickname, query);
             if (rank != null) {
-              matches.push({ person, dynasty, type: nameNorm === query || nicknameNorm === query ? 'exact' : rank <= 2 ? 'starts' : rank <= 3 ? 'word-start' : 'contains', rank });
+              matches.push({ person, dynasty, type: rank === 1 ? 'exact' : rank === 2 ? 'starts' : rank === 3 ? 'word-start' : 'contains', rank });
             }
           }
         }
@@ -471,7 +524,7 @@
         // Сортировка: сначала по рангу, затем по алфавиту/порядку появления
         matches.sort((a, b) => {
           if (a.rank !== b.rank) return a.rank - b.rank;
-          return personCollator.compare(a.person.name, b.person.name);
+          return personCollator.compare(a.person.name, b.person.name) || personCollator.compare(a.dynasty.name, b.dynasty.name);
         });
 
         // Ограничиваем список
