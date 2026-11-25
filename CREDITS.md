@@ -1,6 +1,6 @@
 # Источники и лицензии изображений
 
-На сайте использованы 789 изображений с Wikimedia Commons. Ссылки ведут на конкретные страницы файлов с описанием, авторством и лицензионными отметками; для четырёх новых династий ссылки также хранятся в `src/image-sources.js`.
+На сайте использованы изображения с Wikimedia Commons и знак отсутствия изображения для персон, для которых подходящий свободный портрет не найден. Ссылки ведут на конкретные страницы файлов или на правила повторного использования; для новых разделов биографические и справочные источники также перечислены ниже и в `src/*-nicknames.js`.
 
 Локальные WebP-файлы — адаптированные копии: изменены максимальный размер, кадрирование и формат изображения. Для семи производных файлов под лицензией CC BY-SA сохранены исходные авторство и лицензия; полный текст лицензии доступен по ссылке на странице Wikimedia Commons каждого изображения.
 
@@ -26,7 +26,51 @@
 | Александр III Александрович | Исторический портрет или фотография | Сергей Львович Левицкий | Общественное достояние | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Tsar_Alexander_III_c._1885.jpg) |
 | Николай II Александрович | Исторический портрет или фотография | Неизвестный фотограф | Общественное достояние | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Nicholas_II,_Russian_Emperor_(cropped_2).jpg) |
 
-## Рюриковичи
+## Рогволодовичи, Гедиминовичи и Викинги
+
+Локальные изображения ниже являются свободными копиями файлов Wikimedia Commons. Для каждого позднего образа прямо указано, что это не прижизненный портрет; для персон без надёжной атрибуции используется `assets/no-portrait.svg`.
+
+### Рогволодовичи
+
+| Персона | Тип изображения | Автор / создатель | Лицензия | Источник |
+| --- | --- | --- | --- | --- |
+| Всеслав Брячиславич | Поздняя историческая иллюстрация переправы через Днепр; не прижизненный портрет | Неизвестный автор | Общественное достояние | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:%D0%92%D1%81%D0%B5%D1%81%D0%BB%D0%B0%D0%B2%D0%B0_%D0%91%D1%80%D1%8F%D1%87%D0%B8%D1%81%D0%BB%D0%B0%D0%B2%D0%B8%D1%87%D0%B0_%D0%BF%D0%B5%D1%80%D0%B5%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D1%8F%D1%8E%D1%82_%D1%87%D0%B5%D1%80%D0%B5%D0%B7_%D0%94%D0%BD%D0%B5%D0%BF%D1%80.jpg) |
+
+### Гедиминовичи
+
+| Персона | Тип изображения | Автор / создатель | Лицензия | Источник |
+| --- | --- | --- | --- | --- |
+| Витень | Поздняя историческая живопись, 1709 год; не прижизненный портрет | Неизвестный автор | Общественное достояние | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Vytenis,_the_Grand_Duke_of_Lithuania,_painted_in_1709.png) |
+| Гедимин | Поздняя историческая живопись, 1709 год; не прижизненный портрет | Неизвестный автор | Общественное достояние | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Gediminas,_the_Grand_Duke_of_Lithuania,_painted_in_1709.png) |
+| Явнут | Воображаемый поздний портрет, 1675 год | A. Tarasievič | Общественное достояние | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Ja%C5%ADnut._%D0%AF%D1%9E%D0%BD%D1%83%D1%82_(A._Tarasievi%C4%8D,_1675).jpg) |
+| Ольгерд | Позднее историческое изображение; не прижизненный портрет | Неизвестный автор | Общественное достояние | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Algirdas_kunigaik%C5%A1tis.jpg) |
+| Кейстут | Печать Кейстута, 1379 год; не портрет | Неизвестный создатель печати | Общественное достояние | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Seal_of_K%C4%99stutis,_1379.jpg) |
+| Сигизмунд Кейстутович | Поздняя историческая иллюстрация, XIX век | Неизвестный автор | Общественное достояние | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:%C5%BDygimont_Kiejstutavi%C4%8D._%D0%96%D1%8B%D0%B3%D1%96%D0%BC%D0%BE%D0%BD%D1%82_%D0%9A%D0%B5%D0%B9%D1%81%D1%82%D1%83%D1%82%D0%B0%D0%B2%D1%96%D1%87_(XIX).jpg) |
+| Витовт | Позднее историческое изображение, XVI век; не прижизненный портрет | Неизвестный автор | Общественное достояние | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Lithuanian_Grand_Duke_Vytautas_the_Great.Vytautas_Didysis.jpg) |
+| Ягайло | Фотография надгробного изображения; скульптура, не прижизненная фотография | Maciej Szczepańczyk | CC BY 2.5 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Tomb_effigy_of_Jogaila_(Wladyslaw_II_Jagiello).JPG) |
+| Швитригайло | Позднее историческое изображение из атласа, XVI век; не прижизненный портрет | Неизвестный автор | Общественное достояние | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Lithuanian_Grand_Duke_%C5%A0vitrigaila_(2).jpg) |
+
+### Викинги
+
+| Персона | Тип изображения | Автор / создатель | Лицензия | Источник |
+| --- | --- | --- | --- | --- |
+| Харальд Прекрасноволосый | Средневековая миниатюра из Flateyjarbók; не прижизненный портрет | Неизвестный средневековый мастер | Общественное достояние | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Flateyjarbok_Haraldr_Halfdan_2.jpg) |
+| Хакон Добрый | Историческая сюжетная живопись, XIX век; не прижизненный портрет | Петер Николай Арбо | Общественное достояние | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Peter_Nicolai_Arbo-H%C3%A5kon_den_gode_og_b%C3%B8ndene_ved_blotet_p%C3%A5_M%C3%A6re.jpg) |
+| Эрик Кровавая Секира | Монета Эрика, Йорк, 952–954 годы; не портрет | Неизвестный создатель монеты | Общественное достояние | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Coin_of_Eric_Bloodaxe_Norse_king_of_York_952_954.jpg) |
+| Горм Старый | Историческая сюжетная живопись, 1849 год; не прижизненный портрет | Юлиус Экснер | Общественное достояние | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Julius_Exner,_Thyra_Danebod_fors%C3%B8ger_at_formilde_Gorm_den_Gamles_vrede_mod_nogle_fangne_kristne,_1849,_KMS582,_Statens_Museum_for_Kunst.jpg) |
+| Харальд Синезубый | Поздняя историческая иллюстрация крещения; не прижизненный портрет | См. источник | CC BY-SA 3.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:The_baptism_of_Harald_Bluetooth.jpg) |
+| Свейн Вилобородый | Средневековая миниатюра; сюжетное изображение, не портрет | Неизвестный средневековый мастер | Общественное достояние | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Cambridgemsee359f4edmundkillingsweyn.jpg) |
+| Олаф Святой | Миниатюра из саги; не прижизненный портрет | Неизвестный средневековый мастер | Общественное достояние | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Olav_den_helliges_saga_GM15.jpg) |
+| Лейф Эрикссон | Фотография поздней памятной скульптуры в Бостоне; не портрет | Анна Уитни | Без ограничений | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Leif_Eriksson_statue_by_Anne_Whitney,_Boston.jpg) |
+| Кнуд Великий | Поздняя историческая иллюстрация; не прижизненный портрет | Неизвестный автор | Общественное достояние | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Knut_der_Gro%C3%9Fe_cropped.jpg) |
+| Рагнар Лодброк | Поздняя историческая сюжетная живопись, XIX век; атрибуция сюжета традиционная, не прижизненный портрет | Хуго Гамильтон | Общественное достояние | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Ragnar_Lodbroks_d%C3%B6d_by_Hugo_Hamilton.jpg) |
+
+Биографические источники:
+
+- Полоцкое княжество, Рогволод, Изяслав, Брячислав и Всеслав: [Principality of Polotsk](https://en.wikipedia.org/wiki/Principality_of_Polotsk), [Rogvolod](https://en.wikipedia.org/wiki/Rogvolod), [Vseslav of Polotsk](https://en.wikipedia.org/wiki/Vseslav_of_Polotsk), [музей Софийского собора в Полоцке](https://sophia.polotsk.museum.by/node/8323), Simon Franklin и Jonathan Shepard, [The Emergence of Rus 750–1200](https://books.google.com/books?id=mMoFBAAAQBAJ).
+- Гедиминовичи: [Visuotinė lietuvių enciklopedija: Gediminaičiai](https://www.vle.lt/straipsnis/gediminaiciai/), [Gediminids](https://en.wikipedia.org/wiki/Gediminids), [Grand Duchy of Lithuania](https://en.wikipedia.org/wiki/Grand_Duchy_of_Lithuania), [Inauguracija](https://www.vle.lt/straipsnis/inauguracija/).
+- Эпоха викингов: [National Museum of Denmark](https://en.natmus.dk/historical-knowledge/denmark/prehistoric-period-until-1050-ad/the-viking-age/), [Viking Ship Museum](https://www.vikingeskibsmuseet.dk/en/knowledge-of-the-viking-age), [Parks Canada: L’Anse aux Meadows](https://parks.canada.ca/lhn-nhs/nl/meadows), [UNESCO: L’Anse aux Meadows](https://whc.unesco.org/en/list/4/), а также навигационные библиографии персон в `src/viking-nicknames.js`.
+
 
 | Персона | Тип изображения | Автор / создатель | Лицензия | Источник |
 | --- | --- | --- | --- | --- |

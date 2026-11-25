@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#f7f6f4">
   <meta name="description" content="Интерактивные древа мировых династий: исторические изображения, биографии и устоявшиеся прозвища со ссылками на источники.">
-  <meta name="build-id" content="dynasties-2026-11-17-v63">
+  <meta name="build-id" content="dynasties-2026-11-25-v73">
   <title>Мировые династии правления</title>
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./src/styles.css?v=67">
+  <link rel="stylesheet" href="./src/styles.css?v=74">
   <script>
     try {
       if (localStorage.getItem('dynasties-theme') === 'dark') {
@@ -20,7 +20,7 @@
   <script src="./src/european-dynasties.js?v=56" defer></script>
   <script src="./src/piasts.js?v=56" defer></script>
   <script src="./src/hohenstaufens.js?v=56" defer></script>
-  <script src="./src/image-sources.js?v=56" defer></script>
+  <script src="./src/image-sources.js?v=73" defer></script>
   <script src="./src/additional-dynasties.js?v=56" defer></script>
   <script src="./src/tudors.js?v=56" defer></script>
   <script src="./src/stuarts.js?v=56" defer></script>
@@ -35,7 +35,10 @@
   <script src="./src/glucksburgs.js?v=56" defer></script>
   <script src="./src/savoy.js?v=56" defer></script>
   <script src="./src/vasa.js?v=56" defer></script>
-  <script src="./src/jagiellons.js?v=56" defer></script>
+  <script src="./src/jagiellons.js?v=57" defer></script>
+  <script src="./src/rogvolodovichi.js?v=73" defer></script>
+  <script src="./src/gediminids.js?v=73" defer></script>
+  <script src="./src/vikings.js?v=73" defer></script>
   <script src="./src/premyslids.js?v=56" defer></script>
   <script src="./src/arpads.js?v=56" defer></script>
   <script src="./src/bagrationi.js?v=56" defer></script>
@@ -93,7 +96,10 @@
   <script src="./src/glucksburg-nicknames.js?v=56" defer></script>
   <script src="./src/savoy-nicknames.js?v=56" defer></script>
   <script src="./src/vasa-nicknames.js?v=56" defer></script>
-  <script src="./src/jagiellon-nicknames.js?v=56" defer></script>
+  <script src="./src/jagiellon-nicknames.js?v=57" defer></script>
+  <script src="./src/rogvolodovichi-nicknames.js?v=70" defer></script>
+  <script src="./src/gediminid-nicknames.js?v=70" defer></script>
+  <script src="./src/viking-nicknames.js?v=73" defer></script>
   <script src="./src/premyslid-nicknames.js?v=56" defer></script>
   <script src="./src/arpad-nicknames.js?v=56" defer></script>
   <script src="./src/bagrationi-nicknames.js?v=56" defer></script>
@@ -124,7 +130,7 @@
   <script src="./src/hauteville-nicknames.js?v=65" defer></script>
   <script src="./src/habsburg-nicknames.js?v=68" defer></script>
   <script src="./src/remaining-nicknames.js?v=63" defer></script>
-  <script src="./src/app.js?v=69" defer></script>
+  <script src="./src/app.js?v=74" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -147,12 +153,12 @@
         <div class="hero__copy">
           <p class="kicker">Интерактивная родословная</p>
           <h1 id="pageTitle">Мировые династии правления</h1>
-          <p class="hero__lead">Проследите смену поколений и познакомьтесь с людьми, чьи решения меняли историю. Сорок три династических древа — с историческими изображениями, биографиями и источниками прозвищ.</p>
+           <p class="hero__lead">Проследите смену поколений и познакомьтесь с людьми, чьи решения меняли историю. <span id="heroDynastyCountText">Династии</span> — с историческими изображениями, биографиями и источниками прозвищ.</p>
         </div>
         <dl class="hero__stats" aria-label="Краткая статистика">
-          <div><dt>Династии</dt><dd>66</dd></div>
-          <div><dt>Фигур в древах</dt><dd>898</dd></div>
-          <div><dt>Охват</dt><dd>X–XX вв.</dd></div>
+           <div><dt>Династии</dt><dd id="dynastyStat">—</dd></div>
+           <div><dt>Фигур династий</dt><dd id="figureStat">—</dd></div>
+           <div><dt>Охват</dt><dd id="periodStat">—</dd></div>
         </dl>
       </div>
 
@@ -189,21 +195,32 @@
          <nav class="alphabet-index" id="alphabetIndex" aria-label="Алфавитный указатель династий" hidden></nav>
        </div>
 
-       <div class="dynasty-grid" id="dynastyCatalog">
+        <div class="collection-callout" aria-labelledby="collectionsTitle">
+          <div>
+            <p class="collection-callout__label">Подборки</p>
+            <h3 id="collectionsTitle">Викинги</h3>
+            <p>11 персон с подтверждёнными прозвищами. Коллекция вынесена из каталога династий и общего поиска правителей.</p>
+          </div>
+          <button class="collection-callout__action" type="button" data-dynasty="vikings" aria-label="Открыть подборку людей эпохи викингов">Открыть подборку <span aria-hidden="true">→</span></button>
+        </div>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="romanovs" data-countries="Россия" aria-label="Открыть родословное древо Романовых">
-          <span class="dynasty-card__watermark" aria-hidden="true">Р</span>
-          <span class="dynasty-card__status">Древо доступно</span>
-          <span class="dynasty-card__title">Романовы</span>
-          <span class="dynasty-card__meta">1613–1917 · Россия</span>
-          <span class="dynasty-card__description">Десять поколений правителей, регентов и наследников — от восстановления после Смуты до конца империи.</span>
-          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
-        </button>
+        <div class="dynasty-grid" id="dynastyCatalog">
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="rurikovichs" data-countries="Россия" aria-label="Открыть родословное древо Рюриковичей">
-          <span class="dynasty-card__watermark" aria-hidden="true">Рю</span>
-          <span class="dynasty-card__status">Древо доступно</span>
-          <span class="dynasty-card__title">Рюриковичи</span>
+
+
+          <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="romanovs" data-countries="Россия" aria-label="Открыть родословное древо Романовых">
+            <span class="dynasty-card__watermark" aria-hidden="true">Р</span>
+            <span class="dynasty-card__status">Древо доступно</span>
+            <span class="dynasty-card__title">Романовы</span>
+            <span class="dynasty-card__meta">1613–1917 · Россия</span>
+            <span class="dynasty-card__description">Десять поколений правителей, регентов и наследников — от восстановления после Смуты до конца империи.</span>
+            <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+          </button>
+
+          <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="rurikovichs" data-countries="Россия" aria-label="Открыть родословное древо Рюриковичей">
+           <span class="dynasty-card__watermark" aria-hidden="true">Рю</span>
+           <span class="dynasty-card__status">Древо доступно</span>
+           <span class="dynasty-card__title">Рюриковичи</span>
           <span class="dynasty-card__meta">X–XVI века · Русь → Россия</span>
           <span class="dynasty-card__description">Восемнадцать поколений одной ветви — от Владимира I в Киеве до Фёдора I в Москве.</span>
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
@@ -407,14 +424,35 @@
           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
         </button>
 
-        <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="premyslids" data-countries="Чехия" aria-label="Открыть родословное древо Пржемысловичей">
-          <span class="dynasty-card__watermark" aria-hidden="true">Пр</span>
-          <span class="dynasty-card__status">Древо доступно</span>
-          <span class="dynasty-card__title">Пржемысловичи</span>
-          <span class="dynasty-card__meta">1158–1306 · Чехия</span>
-          <span class="dynasty-card__description">Шесть чешских королей — от Владислава II до Вацлава III.</span>
-          <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
-        </button>
+         <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="rogvolodovichi" data-countries="Полоцк · Беларусь" aria-label="Открыть подборку правителей Рогволодовичей">
+           <span class="dynasty-card__watermark" aria-hidden="true">Ро</span>
+           <span class="dynasty-card__status">Древо доступно</span>
+           <span class="dynasty-card__title">Рогволодовичи</span>
+           <span class="dynasty-card__meta">ок. 978–XIII век · Полоцк и Беларусь</span>
+           <span class="dynasty-card__description">Полоцкая ветвь правителей от Рогволода и Изяслава до поздних князей; спорные реконструкции отмечены в карточках.</span>
+           <span class="dynasty-card__action">Открыть подборку <span aria-hidden="true">→</span></span>
+         </button>
+
+         <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="gediminids" data-countries="Литва · Польша" aria-label="Открыть родословное древо Гедиминовичей">
+           <span class="dynasty-card__watermark" aria-hidden="true">Ге</span>
+           <span class="dynasty-card__status">Древо доступно</span>
+           <span class="dynasty-card__title">Гедиминовичи</span>
+           <span class="dynasty-card__meta">1316–1572 · Литва и Польша</span>
+           <span class="dynasty-card__description">Великие князья литовские от Гедимина до перехода к отдельной линии Ягеллонов, уже представленной в каталоге.</span>
+           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+         </button>
+
+
+
+
+          <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="premyslids" data-countries="Чехия" aria-label="Открыть родословное древо Пржемысловичей">
+           <span class="dynasty-card__watermark" aria-hidden="true">Пр</span>
+           <span class="dynasty-card__status">Древо доступно</span>
+           <span class="dynasty-card__title">Пржемысловичи</span>
+           <span class="dynasty-card__meta">1158–1306 · Чехия</span>
+           <span class="dynasty-card__description">Шесть чешских королей — от Владислава II до Вацлава III.</span>
+           <span class="dynasty-card__action">Открыть древо <span aria-hidden="true">→</span></span>
+         </button>
 
         <button class="dynasty-card dynasty-card--active" type="button" data-dynasty="arpads" data-countries="Венгрия" aria-label="Открыть родословное древо Арпадов">
           <span class="dynasty-card__watermark" aria-hidden="true">А</span>

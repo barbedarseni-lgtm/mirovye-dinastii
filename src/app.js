@@ -29,6 +29,33 @@
   const modalClose = document.getElementById('modalClose');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
+  const dynastyEntries = Object.values(window.DYNASTIES);
+  const collectionIds = new Set(['vikings']);
+  const dynastyCollections = dynastyEntries.filter((dynasty) => collectionIds.has(dynasty.id));
+  const actualDynasties = dynastyEntries.filter((dynasty) => !collectionIds.has(dynasty.id));
+  const yearValues = actualDynasties.flatMap((dynasty) => dynasty.members.flatMap((person) => [person.born, person.died]
+    .map((value) => {
+      const text = String(value ?? '');
+      const match = text.match(/(?:^|[^0-9])(\d{3,4})(?![0-9])/);
+      if (!match) return null;
+      const year = Number(match[1]);
+      return /до\s+н\.?\s*э\.?/i.test(text) ? -year : year;
+    })
+    .filter((year) => year != null)));
+
+  function formatCentury(year) {
+    const century = Math.floor((Math.abs(year) - 1) / 100) + 1;
+    return year < 0 ? `${century} в. до н. э.` : `${century} в.`;
+  }
+  function updateHeroStats() {
+    const minYear = Math.min(...yearValues);
+    const maxYear = Math.max(...yearValues);
+    document.getElementById('dynastyStat').textContent = actualDynasties.length;
+    document.getElementById('figureStat').textContent = actualDynasties.reduce((sum, dynasty) => sum + dynasty.members.length, 0);
+    document.getElementById('periodStat').textContent = `${formatCentury(minYear)}–${formatCentury(maxYear)}`;
+    document.getElementById('heroDynastyCountText').textContent = `${actualDynasties.length} династий и отдельная подборка викингов`;
+  }
+
   let activeDynastyCard = null;
   let currentDynastyId = 'romanovs';
   let lastFocusedElement = null;
@@ -104,6 +131,12 @@
 
   function renderTree(dynasty) {
     treeGenerations.replaceChildren();
+    const isCollection = collectionIds.has(dynasty.id);
+    treeGenerations.classList.toggle('collection-gallery', isCollection);
+    if (isCollection) {
+      dynasty.members.forEach((person) => treeGenerations.appendChild(personButton(person)));
+      return;
+    }
     const generations = new Map();
     dynasty.members.forEach((person) => {
       if (!generations.has(person.generation)) generations.set(person.generation, []);
@@ -130,6 +163,10 @@
     if (treeScreen.hidden) return;
     const dynasty = window.DYNASTIES[currentDynastyId];
     if (!dynasty) return;
+    if (collectionIds.has(dynasty.id)) {
+      treeConnections.replaceChildren();
+      return;
+    }
     const memberMap = new Map(dynasty.members.map((person) => [person.id, person]));
     const canvasRect = treeCanvas.getBoundingClientRect();
     // Абсолютный SVG сам входит в scroll-размеры древа и не должен влиять на их расчёт.
@@ -180,6 +217,17 @@
     activeDynastyCard = sourceCard || document.querySelector(`[data-dynasty="${dynastyId}"]`);
     renderTree(dynasty);
     document.getElementById('treeTitle').textContent = dynasty.heading || `Дом ${dynasty.name}`;
+    const isCollection = dynasty.id === 'vikings';
+    treeScroll.classList.toggle('tree-scroll--collection', isCollection);
+    treeCanvas.classList.toggle('tree-canvas--collection', isCollection);
+    document.querySelector('.tree-legend').hidden = isCollection;
+    document.querySelector('.tree-heading .kicker').textContent = isCollection ? 'Галерея прозвищ' : 'Родословное древо';
+    backButton.setAttribute('aria-label', isCollection ? 'Назад к каталогу' : 'Назад к династиям');
+    backButton.lastChild.textContent = isCollection ? 'Назад к каталогу' : 'Назад к династиям';
+    document.querySelector('.tree-intro__hint').hidden = isCollection;
+    document.getElementById('treeScroll').setAttribute('aria-label', isCollection
+      ? 'Подборка: Викинги. Группы персон не обозначают родственные связи.'
+      : `Древо: ${dynasty.name}. На небольшом экране прокручивайте древо по горизонтали.`);
     const meta = document.getElementById('treeMeta');
     meta.replaceChildren();
     [dynasty.period, dynasty.country, `${dynasty.members.length} фигур`].forEach((text) => {
@@ -188,7 +236,6 @@
       meta.appendChild(item);
     });
     document.getElementById('treeIntroText').textContent = dynasty.intro;
-    treeScroll.setAttribute('aria-label', `Древо: ${dynasty.name}. На небольшом экране прокручивайте древо по горизонтали.`);
     dynastyScreen.hidden = true;
     treeScreen.hidden = false;
     treeScroll.scrollLeft = Math.max(0, (treeCanvas.offsetWidth - treeScroll.clientWidth) / 2);
@@ -291,7 +338,8 @@
     if (!catalog || !search || !clearSearch || !alphabet) return;
 
     const sourceCards = [...catalog.querySelectorAll(':scope > [data-dynasty]')];
-    const futureCard = catalog.querySelector(':scope > .dynasty-card--future');
+    const catalogLabel = catalog.querySelector(':scope > .dynasty-grid__label');
+     const futureCard = catalog.querySelector(':scope > .dynasty-card--future');
     const countries = new Map();
     const countryOrder = new Intl.Collator('ru', { sensitivity: 'base' });
 
@@ -308,6 +356,7 @@
     });
 
     catalog.replaceChildren();
+    if (catalogLabel) catalog.append(catalogLabel);
     const sections = new Map();
     [...countries.keys()].sort(countryOrder.compare).forEach((country, index) => {
       const slug = `country-${index}`;
@@ -368,6 +417,7 @@
       const query = normalizeCatalogText(search.value.trim());
       const wasQueryActive = queryActive;
       queryActive = Boolean(query);
+      document.querySelector('.collection-callout').hidden = queryActive || Boolean(document.getElementById('personSearch')?.value.trim());
       const uniqueMatches = new Set();
       const visibleLetters = new Set();
       // Совпадение с полем (название или страна): короткий запрос — по началу,
@@ -379,8 +429,8 @@
       countryEntries.forEach(({ section, toggle, content, grid, records }) => {
         grid.replaceChildren();
         const country = section.dataset.country;
-        const matches = records.filter(({ title, searchFields }) => {
-          if (!query) return true;
+        const matches = records.filter(({ title, searchFields, id }) => {
+           if (!query) return true;
           const nameField = normalizeCatalogText(title);
           const nameHit = fieldMatches(nameField, query);
           // Страна учитывается только если запрос совпал с названием этой страны (а не с чужой),
@@ -493,6 +543,7 @@
 
       personSearch.addEventListener('input', () => {
         clearPersonSearch.hidden = !personSearch.value;
+        document.querySelector('.collection-callout').hidden = Boolean(personSearch.value.trim() || search.value.trim());
         const query = normalizeCatalogText(personSearch.value.trim());
         if (!query) {
           personSearchResults.hidden = true;
@@ -504,7 +555,7 @@
         // Собираем все совпадения с рейтингом
         const matches = [];
         const seenPersons = new Set();
-        for (const dynasty of Object.values(window.DYNASTIES)) {
+        for (const dynasty of actualDynasties) {
           for (const person of dynasty.members) {
             // Дубликат — это одно и то же лицо в нескольких династиях
             // (или двойная вставка человека в древо). В пределах одной династии
@@ -614,15 +665,17 @@
         personSearchResults.hidden = true;
         personSearch.setAttribute('aria-expanded', 'false');
         personSearchStatus.textContent = '';
+        document.querySelector('.collection-callout').hidden = Boolean(search.value.trim());
         personSearch.focus();
       });
     }
   }
 
-  setupCatalog();
+    updateHeroStats();
+    setupCatalog();
   document.addEventListener('click', (event) => {
     const card = event.target.closest('[data-dynasty]');
-    if (card && card.closest('#dynastyCatalog')) showTree(card.dataset.dynasty, card);
+    if (card && card.dataset.dynasty) showTree(card.dataset.dynasty, card);
   });
   backButton.addEventListener('click', () => showDynasties());
   homeButton.addEventListener('click', () => showDynasties(false));

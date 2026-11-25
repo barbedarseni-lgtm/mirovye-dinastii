@@ -208,6 +208,13 @@ h1, h2, h3 { font-family: var(--display-font); line-height: 1.08; text-wrap: bal
 .alphabet-index button.is-active:hover, .alphabet-index button.is-active:focus-visible { border-color: var(--accent); background: var(--accent-soft); }
 .alphabet-index button:disabled { cursor: default; opacity: 0.38; color: var(--text-muted); }
 .dynasty-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; min-width: 0; }
+.dynasty-grid__label { grid-column: 1 / -1; margin-top: 8px; color: var(--text-muted); font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.collection-callout { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px; align-items: center; margin-bottom: 24px; border: 1px solid var(--accent); border-left: 6px solid var(--accent); padding: 20px 24px; background: var(--accent-soft); }
+.collection-callout__label { color: var(--accent); font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+.collection-callout h3 { margin-top: 6px; font-size: 30px; }
+.collection-callout p:last-child { max-width: 62ch; margin-top: 8px; color: var(--text-muted); }
+.collection-callout__action { min-height: 44px; border: 1px solid var(--accent); padding: 10px 14px; background: var(--surface-raised); color: var(--accent); font-weight: 700; }
+.collection-callout__action:hover { background: var(--accent); color: var(--on-accent); }
 .country-section { display: grid; gap: 12px; width: 100%; min-width: 0; scroll-margin-top: 20px; }
 .country-section__toggle { display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: 12px; width: 100%; min-height: 52px; border: 1px solid var(--line); border-radius: 10px; padding: 10px 16px; background: var(--surface-muted); color: var(--text); text-align: left; font-family: var(--display-font); font-size: 22px; font-weight: 700; }
 .country-section__toggle:hover { border-color: var(--accent); }
@@ -243,8 +250,8 @@ button.dynasty-card:active { transform: translateY(-1px); }
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
-.dynasty-card__title { position: relative; z-index: 1; display: block; margin-top: 28px; font-size: 34px; font-weight: 700; }
-.dynasty-card__meta { position: relative; z-index: 1; display: block; margin-top: 8px; color: var(--text-muted); font-size: 14px; }
+.dynasty-card__title { position: relative; z-index: 1; display: block; margin-top: 28px; font-size: clamp(25px, 3vw, 34px); font-weight: 700; line-height: 1.08; overflow-wrap: anywhere; }
+.dynasty-card__meta { position: relative; z-index: 1; display: block; margin-top: 8px; color: var(--text-muted); font-size: 14px; line-height: 1.35; overflow-wrap: anywhere; }
 .dynasty-card__description { position: relative; z-index: 1; display: block; max-width: 44ch; margin-top: 20px; color: var(--text-muted); }
 .dynasty-card__action {
   position: relative;
@@ -436,6 +443,11 @@ button.dynasty-card:active { transform: translateY(-1px); }
   .country-section__grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
 }
 
+@media (max-width: 600px) {
+  .collection-callout { grid-template-columns: 1fr; gap: 14px; padding: 16px; }
+  .collection-callout__action { justify-self: start; }
+}
+
 @media (max-width: 430px) {
   .brand__text { max-width: 82px; line-height: 1.15; }
   .theme-toggle { padding: 10px; }
@@ -490,6 +502,18 @@ button.dynasty-card:active { transform: translateY(-1px); }
   overflow-wrap: anywhere;
 }
 .person__nickname--none { color: var(--text-muted); font-size: 12px; font-weight: 400; }
+.tree-scroll--collection { overflow: visible; border: 0; background: transparent; }
+.tree-canvas--collection { width: 100%; padding: 0; }
+#treeGenerations.collection-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 20px; }
+.collection-gallery .person { display: flex; flex-direction: column; width: 100%; min-height: 0; padding: 12px 12px 16px; }
+.collection-gallery .person__portrait { aspect-ratio: 4 / 3; }
+.collection-gallery .person__name { font-size: 21px; }
+.collection-gallery .person__more { margin-top: auto; padding-top: 16px; }
+.collection-gallery .person__nickname { min-height: 0; margin-top: 14px; }
+@media (max-width: 600px) {
+  #treeGenerations.collection-gallery { grid-template-columns: 1fr; }
+  .collection-gallery .person__portrait { aspect-ratio: 3 / 2; }
+}
 .modal-dialog { max-width: 640px; }
 .modal-nickname__label, .modal-source__label {
   display: block;
